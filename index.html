@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b3248">
+  <meta name="description" content="Custom digital learning hubs, training platforms, resource centres and installable web applications designed in Jamaica.">
+  <meta name="author" content="Glenroy Griffiths">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Custom Digital Learning Hubs">
+  <meta property="og:description" content="Turn manuals, courses, policies, presentations, videos and resources into an interactive digital learning platform.">
+  <meta property="og:image" content="https://glenroygriffiths876-collab.github.io/custom-digital-learning-hubs/assets/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_JM">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Custom Digital Learning Hubs">
+  <meta name="twitter:description" content="Professional, mobile-friendly and installable digital learning platforms.">
+  <meta name="twitter:image" content="https://glenroygriffiths876-collab.github.io/custom-digital-learning-hubs/assets/images/social-preview.png">
+  <link rel="canonical" href="https://glenroygriffiths876-collab.github.io/custom-digital-learning-hubs/">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <title>Custom Digital Learning Hubs | Glenroy Griffiths</title>
+  <style>
+    /* ================================================================
+       BRAND VARIABLES — change these to rebrand the complete website.
+       ================================================================ */
+    :root{
+      --brand:#0d9482;
+      --brand-dark:#0b6e66;
+      --brand-soft:#dff8f2;
+      --navy:#0b3248;
+      --navy-2:#123f57;
+      --gold:#f7b32b;
+      --ink:#18313d;
+      --muted:#60727a;
+      --bg:#f5faf9;
+      --surface:#ffffff;
+      --surface-2:#edf7f4;
+      --line:#d6e5e2;
+      --danger:#b42318;
+      --success:#147d64;
+      --shadow:0 18px 60px rgba(9,53,70,.12);
+      --shadow-sm:0 8px 28px rgba(9,53,70,.10);
+      --radius:24px;
+      --radius-sm:15px;
+      --content:1180px;
+      --font:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    html[data-theme="dark"]{
+      --ink:#ecf8f5;
+      --muted:#a9c2c3;
+      --bg:#071f2c;
+      --surface:#0d2a38;
+      --surface-2:#123543;
+      --line:#244956;
+      --brand-soft:#103e3b;
+      --shadow:0 18px 60px rgba(0,0,0,.28);
+      --shadow-sm:0 8px 28px rgba(0,0,0,.22);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+    body.large-text{font-size:1.1rem}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    .skip-link{position:fixed;left:12px;top:-100px;background:var(--navy);color:#fff;padding:10px 14px;border-radius:10px;z-index:9999}
+    .skip-link:focus{top:12px}
+    .container{width:min(var(--content),calc(100% - 36px));margin-inline:auto}
+    .section{padding:94px 0}
+    .section-tight{padding:68px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:var(--brand-soft);color:var(--brand-dark);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    html[data-theme="dark"] .eyebrow{color:#8af0dc}
+    .section-head{max-width:770px;margin-bottom:38px}
+    .section-head.center{text-align:center;margin-inline:auto;margin-bottom:46px}
+    h1,h2,h3,h4{line-height:1.12;margin:0 0 14px;letter-spacing:-.035em}
+    h1{font-size:clamp(2.8rem,6vw,5.4rem)}
+    h2{font-size:clamp(2rem,4vw,3.35rem)}
+    h3{font-size:1.35rem}
+    p{margin:0 0 18px}
+    .lead{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--muted);max-width:730px}
+    .muted{color:var(--muted)}
+    .small{font-size:.9rem}
+    .grid{display:grid;gap:22px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 18px;border:1px solid transparent;border-radius:14px;font-weight:800;text-decoration:none;transition:.2s ease;background:transparent}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;box-shadow:0 10px 28px rgba(13,148,130,.26)}
+    .btn-secondary{background:var(--surface);color:var(--navy);border-color:var(--line)}
+    html[data-theme="dark"] .btn-secondary{color:#eaf8f5}
+    .btn-ghost{color:var(--ink);border-color:var(--line)}
+    .btn-gold{background:var(--gold);color:#352500}
+    .btn-sm{min-height:40px;padding:9px 13px;border-radius:11px;font-size:.9rem}
+    .icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+    .icon-box{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:var(--brand-soft);color:var(--brand-dark)}
+    html[data-theme="dark"] .icon-box{color:#8af0dc}
+
+    /* Navigation */
+    .site-header{position:sticky;top:0;z-index:1000;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+    .nav-wrap{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:0}
+    .brand-mark{width:43px;height:43px;border-radius:13px;background:linear-gradient(145deg,var(--navy),var(--brand));display:grid;place-items:center;color:#fff;box-shadow:var(--shadow-sm)}
+    .brand-mark svg{width:27px;height:27px}
+    .brand-text{font-weight:900;line-height:1.05;letter-spacing:-.03em}
+    .brand-text small{display:block;font-size:.72rem;color:var(--muted);letter-spacing:.03em;margin-top:4px}
+    .main-nav{display:flex;align-items:center;gap:4px}
+    .main-nav a{padding:9px 11px;border-radius:10px;text-decoration:none;font-size:.91rem;font-weight:700;color:var(--muted)}
+    .main-nav a:hover{background:var(--surface-2);color:var(--ink)}
+    .nav-actions{display:flex;align-items:center;gap:8px}
+    .icon-btn{width:43px;height:43px;display:grid;place-items:center;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+    .menu-toggle{display:none}
+
+    /* Hero */
+    .hero{position:relative;padding:82px 0 84px;overflow:hidden;background:
+      radial-gradient(circle at 85% 12%,rgba(34,197,94,.24),transparent 28%),
+      radial-gradient(circle at 12% 85%,rgba(134,239,172,.18),transparent 30%)}
+    .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(11,50,72,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(11,50,72,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:46px}
+    .hero-copy .eyebrow{margin-bottom:20px}
+    .hero-copy h1 span{color:var(--brand)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 25px}
+    .proof-row{display:flex;flex-wrap:wrap;gap:12px 22px;color:var(--muted);font-size:.92rem;font-weight:700}
+    .proof-row span{display:flex;align-items:center;gap:7px}
+    .proof-row b{color:var(--success)}
+    .device-scene{position:relative;min-height:520px;perspective:1200px}
+    .glow{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(74,222,128,.38),rgba(34,197,94,.14) 42%,transparent 70%);right:30px;top:50px;filter:blur(8px)}
+    .laptop{position:absolute;right:0;top:74px;width:88%;transform:rotateY(-8deg) rotateX(2deg);filter:drop-shadow(0 36px 36px rgba(2,34,48,.22))}
+    .laptop-screen{background:#d9e6e4;border:10px solid #132a35;border-bottom-width:16px;border-radius:20px 20px 12px 12px;overflow:hidden;aspect-ratio:16/10}
+    .app-ui{height:100%;display:grid;grid-template-columns:24% 76%;background:#f4fbf8;color:#14313c;font-size:11px}
+    .app-side{background:#0b3248;color:#fff;padding:16px 11px}
+    .app-logo{height:27px;border-radius:8px;background:linear-gradient(135deg,#21c7aa,#0d9482);margin-bottom:20px}
+    .app-navline{height:8px;border-radius:5px;background:rgba(255,255,255,.20);margin:10px 0}
+    .app-navline.active{background:#7ce7d2;width:80%}
+    .app-main{padding:18px}
+    .app-banner{height:27%;border-radius:13px;background:linear-gradient(135deg,#0d9482,#136d80);margin-bottom:13px;position:relative;overflow:hidden}
+    .app-banner:after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,.15);right:-15px;top:-35px}
+    .app-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+    .app-card{height:70px;border-radius:10px;background:#fff;border:1px solid #d8e8e4;padding:8px}
+    .app-card:before{content:"";display:block;width:23px;height:23px;border-radius:7px;background:#d9f5ee;margin-bottom:9px}
+    .app-card:after{content:"";display:block;width:75%;height:6px;border-radius:4px;background:#c4d9d5;box-shadow:0 10px 0 #e3eeec}
+    .laptop-base{height:18px;background:linear-gradient(#d6dfdf,#aebcbe);clip-path:polygon(4% 0,96% 0,100% 100%,0 100%);border-radius:0 0 18px 18px}
+    .phone{position:absolute;left:3%;bottom:10px;width:31%;background:#122b36;border:7px solid #122b36;border-radius:32px;box-shadow:0 30px 42px rgba(2,34,48,.30);transform:rotate(-4deg)}
+    .phone-screen{background:#f4fbf8;border-radius:23px;overflow:hidden;aspect-ratio:9/18;padding:13px 10px;color:#14313c}
+    .phone-notch{width:38%;height:6px;border-radius:8px;background:#223a43;margin:0 auto 13px}
+    .phone-hero{height:64px;border-radius:12px;background:linear-gradient(135deg,#0d9482,#0b6e66);margin-bottom:12px}
+    .phone-card{height:42px;border-radius:10px;background:#fff;border:1px solid #d6e5e2;margin:8px 0;position:relative}
+    .phone-card:before{content:"";position:absolute;width:22px;height:22px;border-radius:6px;background:#dff8f2;left:8px;top:9px}
+    .phone-card:after{content:"";position:absolute;width:42%;height:6px;border-radius:4px;background:#c0d6d2;left:39px;top:11px;box-shadow:0 11px 0 #e2efec}
+    .float-badge{position:absolute;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-sm);font-weight:800;font-size:.85rem;display:flex;align-items:center;gap:9px}
+    .float-badge.one{right:0;bottom:45px}
+    .float-badge.two{left:16%;top:16px}
+    .pulse-dot{width:9px;height:9px;border-radius:50%;background:var(--success);box-shadow:0 0 0 6px rgba(20,125,100,.13)}
+
+    /* Service cards */
+    .service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+    .service-card{padding:23px;min-height:205px;transition:.2s ease;position:relative;overflow:hidden}
+    .service-card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--brand) 40%,var(--line));box-shadow:var(--shadow)}
+    .service-card h3{font-size:1.05rem;margin-top:17px}
+    .service-card p{font-size:.92rem;color:var(--muted);margin:0}
+    .service-card:after{content:"";position:absolute;width:70px;height:70px;border-radius:50%;right:-35px;bottom:-35px;background:var(--brand-soft)}
+
+    /* Demo */
+    .demo-shell{padding:18px;background:linear-gradient(145deg,var(--navy),#0e6570);border-radius:32px;box-shadow:var(--shadow);color:#fff}
+    .demo-window{background:var(--surface);color:var(--ink);border-radius:22px;overflow:hidden;display:grid;grid-template-columns:260px 1fr;min-height:590px}
+    .demo-sidebar{background:var(--surface-2);border-right:1px solid var(--line);padding:20px}
+    .demo-sidebar h3{font-size:1rem;margin-bottom:16px}
+    .demo-tab{width:100%;display:flex;align-items:center;gap:10px;padding:11px 12px;margin:5px 0;border:0;border-radius:11px;background:transparent;color:var(--muted);font-weight:750;text-align:left}
+    .demo-tab.active,.demo-tab:hover{background:var(--surface);color:var(--brand-dark);box-shadow:var(--shadow-sm)}
+    html[data-theme="dark"] .demo-tab.active{color:#8af0dc}
+    .demo-progress{margin-top:20px;padding:14px;border-radius:14px;background:var(--surface)}
+    .progress-track{height:9px;border-radius:99px;background:var(--line);overflow:hidden}
+    .progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--brand),#45d5b8);transition:width .35s ease}
+    .demo-main{padding:28px;min-width:0}
+    .demo-panel{display:none;animation:fadeUp .28s ease}
+    .demo-panel.active{display:block}
+    .demo-toolbar{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
+    .lesson-box{padding:20px;border-radius:18px;background:var(--surface-2);border:1px solid var(--line)}
+    .lesson-box ul{padding-left:20px}
+    .check-pill{display:inline-flex;align-items:center;gap:7px;background:var(--brand-soft);color:var(--brand-dark);font-weight:800;padding:8px 11px;border-radius:999px}
+    html[data-theme="dark"] .check-pill{color:#8af0dc}
+    .quiz-q{border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0;background:var(--surface)}
+    .option{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:11px;margin:8px 0;cursor:pointer}
+    .option:hover{background:var(--surface-2)}
+    .quiz-result{display:none;padding:16px;border-radius:14px;background:var(--brand-soft);margin-top:16px;color:var(--brand-dark);font-weight:800}
+    html[data-theme="dark"] .quiz-result{color:#8af0dc}
+    .search-results{margin-top:14px}
+    .search-hit{padding:12px 14px;border:1px solid var(--line);border-radius:12px;margin:8px 0;background:var(--surface-2)}
+    mark{background:#ffe28a;color:#332600;padding:0 2px;border-radius:3px}
+    .chat-box{height:280px;overflow:auto;border:1px solid var(--line);border-radius:16px;padding:14px;background:var(--surface-2);margin-bottom:12px}
+    .bubble{max-width:85%;padding:11px 13px;border-radius:14px;margin:8px 0;font-size:.94rem}
+    .bubble.bot{background:var(--surface);border:1px solid var(--line)}
+    .bubble.user{background:var(--brand);color:#fff;margin-left:auto}
+    .chat-row{display:flex;gap:9px}
+    .chat-row input{flex:1}
+    .demo-window input[type="search"],.demo-window input[type="text"]{width:100%;min-height:46px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 12px}
+
+    /* Feature tabs */
+    .feature-tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+    .feature-tab{padding:11px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-weight:800}
+    .feature-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .feature-panel{display:none}
+    .feature-panel.active{display:grid}
+    .feature-list-card{padding:24px}
+    .feature-list-card ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px 18px;list-style:none;padding:0;margin:0}
+    .feature-list-card li{display:flex;gap:9px;align-items:flex-start}
+    .feature-list-card li:before{content:"✓";color:var(--success);font-weight:900}
+    .note{padding:18px;border-left:4px solid var(--gold);background:color-mix(in srgb,var(--gold) 12%,var(--surface));border-radius:0 14px 14px 0}
+
+    /* Comparison */
+    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .compare-card{padding:29px}
+    .compare-card.before{border-top:5px solid #cc5b53}
+    .compare-card.after{border-top:5px solid var(--brand)}
+    .compare-card ul{list-style:none;padding:0;margin:20px 0 0}
+    .compare-card li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:10px}
+    .compare-card.before li:before{content:"−";color:#cc5b53;font-weight:900}
+    .compare-card.after li:before{content:"✓";color:var(--success);font-weight:900}
+
+    /* Case study */
+    .case-study{background:linear-gradient(135deg,var(--navy),#0c5c69);color:#fff;border-radius:34px;padding:44px;display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center;overflow:hidden;position:relative}
+    .case-study:after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:rgba(72,220,190,.12);right:-120px;top:-120px}
+    .case-study .lead{color:#d5ece8}
+    .case-tags{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}
+    .case-tags span{padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);font-size:.86rem;font-weight:700}
+    .case-visual{position:relative;z-index:1;background:#fff;border-radius:23px;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.25);transform:rotate(2deg)}
+    .case-screen{background:#f2faf7;border-radius:15px;padding:17px;color:#173541;min-height:330px}
+    .case-screen-top{height:78px;border-radius:14px;background:linear-gradient(135deg,#0d9482,#0b4e67);margin-bottom:15px;padding:16px;color:#fff}
+    .case-mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+    .case-mini-card{height:92px;background:#fff;border:1px solid #dcebe7;border-radius:12px;padding:12px}
+    .case-mini-card b{display:block;font-size:1.3rem;color:#0d9482}
+
+    /* Process */
+    .process{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .process:before{content:"";position:absolute;left:8%;right:8%;top:34px;height:2px;background:var(--line);z-index:0}
+    .step{position:relative;z-index:1;text-align:center;padding:0 8px}
+    .step-num{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:3px solid var(--brand);color:var(--brand-dark);font-size:1.25rem;font-weight:900;margin:0 auto 16px;box-shadow:var(--shadow-sm)}
+    html[data-theme="dark"] .step-num{color:#8af0dc}
+    .step p{font-size:.9rem;color:var(--muted)}
+
+    /* Packages */
+    .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+    .package{padding:30px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+    .package.featured{border:2px solid var(--brand);transform:translateY(-9px)}
+    .popular{position:absolute;right:18px;top:18px;background:var(--gold);color:#352500;padding:6px 10px;border-radius:999px;font-size:.75rem;font-weight:900}
+    .package ul{padding-left:0;list-style:none;flex:1}
+    .package li{display:flex;gap:9px;padding:7px 0}
+    .package li:before{content:"✓";color:var(--success);font-weight:900}
+    .package .btn{width:100%;margin-top:15px}
+
+    /* Audience chips */
+    .audience-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:11px}
+    .audience-cloud span{padding:11px 15px;background:var(--surface);border:1px solid var(--line);border-radius:999px;font-weight:750;box-shadow:var(--shadow-sm)}
+
+    /* Form */
+    .form-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
+    .form-info{padding:30px;background:linear-gradient(145deg,var(--navy),#0b6e66);color:#fff;border-radius:var(--radius);position:sticky;top:100px}
+    .form-info .muted{color:#d5e9e6}
+    .form-info ul{list-style:none;padding:0}
+    .form-info li{display:flex;gap:10px;padding:8px 0}
+    .form-card{padding:30px}
+    .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field.full{grid-column:1/-1}
+    label{font-size:.9rem;font-weight:800}
+    input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:11px 12px;min-height:47px}
+    textarea{min-height:125px;resize:vertical}
+    .checkbox-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .check-option{display:flex;align-items:center;gap:8px;padding:10px;border:1px solid var(--line);border-radius:11px;font-weight:650;font-size:.88rem}
+    .check-option input{width:auto;min-height:0}
+    .form-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .form-status{margin-top:14px;display:none;padding:13px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line)}
+
+    /* FAQ */
+    .faq{max-width:860px;margin:auto}
+    .faq details{background:var(--surface);border:1px solid var(--line);border-radius:15px;margin:10px 0;box-shadow:var(--shadow-sm)}
+    .faq summary{cursor:pointer;padding:17px 20px;font-weight:850;list-style:none;display:flex;justify-content:space-between;gap:15px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary:after{content:"+";font-size:1.35rem;color:var(--brand)}
+    .faq details[open] summary:after{content:"−"}
+    .faq .answer{padding:0 20px 19px;color:var(--muted)}
+
+    /* Transparency + CTA */
+    .transparency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .transparency-card{padding:22px}
+    .cta{background:linear-gradient(135deg,var(--navy),#0d7b73);color:#fff;border-radius:34px;padding:55px;text-align:center;position:relative;overflow:hidden}
+    .cta:before,.cta:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
+    .cta:before{width:280px;height:280px;left:-120px;bottom:-140px}.cta:after{width:220px;height:220px;right:-100px;top:-100px}
+    .cta-inner{position:relative;z-index:1;max-width:780px;margin:auto}
+    .cta .lead{color:#dcefeb;margin-inline:auto}
+    .cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:11px}
+
+    /* Footer */
+    footer{padding:50px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:1.3fr .7fr .7fr .8fr;gap:28px}
+    .footer-links{display:grid;gap:8px}
+    .footer-links a{color:var(--muted);text-decoration:none}
+    .share-row{display:flex;flex-wrap:wrap;gap:8px}
+    .share-btn{width:42px;height:42px;border:1px solid var(--line);background:var(--surface);border-radius:11px;display:grid;place-items:center;color:var(--ink)}
+    .footer-bottom{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.87rem}
+
+    /* Modals, toast, utilities */
+    .modal{position:fixed;inset:0;z-index:3000;background:radial-gradient(circle at 18% 12%,rgba(34,197,94,.18),transparent 30%),rgba(3,24,34,.76);display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(7px)}
+    .modal.open{display:flex}
+    .modal-card{width:min(720px,100%);max-height:90vh;overflow:auto;background:var(--surface);color:var(--ink);border-radius:24px;box-shadow:0 30px 90px rgba(0,0,0,.35);padding:26px;position:relative}
+    .modal-close{position:absolute;right:14px;top:14px}
+    .certificate{border:9px double var(--navy);padding:42px 34px;text-align:center;background:linear-gradient(135deg,#fff,#eefaf6);color:#14313c;position:relative;overflow:hidden}
+    .certificate:before,.certificate:after{content:"";position:absolute;width:140px;height:140px;border-radius:50%;background:rgba(13,148,130,.10)}
+    .certificate:before{left:-60px;top:-60px}.certificate:after{right:-60px;bottom:-60px}
+    .certificate h2{font-family:Georgia,serif;color:var(--navy)}
+    .certificate-name{font-size:2rem;font-family:Georgia,serif;color:var(--brand-dark);border-bottom:1px solid #9cb5b1;display:inline-block;min-width:60%;padding:5px}
+    .install-preview{display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:center}
+    .install-phone{background:#182e37;border:8px solid #182e37;border-radius:30px;padding:10px;box-shadow:var(--shadow);max-width:190px}
+    .install-phone-screen{aspect-ratio:9/18;background:linear-gradient(160deg,#e9f9f5,#fff);border-radius:20px;padding:20px 13px;text-align:center;color:#173541}
+    .install-icon{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,var(--navy),var(--brand));color:#fff;display:grid;place-items:center;margin:40px auto 16px;font-size:1.2rem;font-weight:900}
+    .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);opacity:0;z-index:4000;background:var(--navy);color:#fff;padding:12px 17px;border-radius:12px;box-shadow:var(--shadow);transition:.25s ease;max-width:min(92vw,620px);text-align:center}
+    .toast.show{transform:translate(-50%,0);opacity:1}
+    .floating-whatsapp{position:fixed;right:19px;bottom:18px;z-index:1200;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;border:0;box-shadow:0 16px 32px rgba(0,0,0,.22)}
+    .back-top{position:fixed;right:25px;bottom:87px;z-index:1100;width:43px;height:43px;border-radius:13px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:none;place-items:center;box-shadow:var(--shadow-sm)}
+    .back-top.show{display:grid}
+    .offline-bar{display:none;position:fixed;top:78px;left:0;right:0;z-index:999;background:#7b4a00;color:#fff;text-align:center;padding:7px;font-size:.85rem;font-weight:800}
+    .offline-bar.show{display:block}
+    .install-screen{position:fixed;inset:0;z-index:5000;background:radial-gradient(circle at 18% 18%,rgba(134,239,172,.25),transparent 28%),radial-gradient(circle at 85% 82%,rgba(34,197,94,.22),transparent 30%),linear-gradient(145deg,#031b19,#075f3a 55%,#0b3248);display:none;align-items:center;justify-content:center;padding:22px;color:#fff}
+    .install-screen.show{display:flex}
+    .install-screen-card{width:min(560px,100%);background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);border-radius:28px;padding:34px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.25)}
+    .install-screen-logo{width:92px;height:92px;margin:0 auto 20px;border-radius:24px;background:#fff;padding:10px}
+    .install-screen .btn{min-width:220px;margin:7px}
+
+    /* ================================================================
+       WELCOME + RESPONSIVE PREVIEW EXPERIENCE
+       The client logo is configured in CONFIG.clientLogoPath. When that
+       file is missing, the polished YOUR LOGO HERE fallback is shown.
+       ================================================================ */
+    .welcome-screen{position:fixed;inset:0;z-index:6000;display:none;overflow:auto;padding:clamp(18px,4vw,46px);color:#fff;background:
+      radial-gradient(circle at 13% 18%,rgba(134,239,172,.32),transparent 28%),
+      radial-gradient(circle at 88% 16%,rgba(74,222,128,.24),transparent 28%),
+      radial-gradient(circle at 70% 88%,rgba(22,163,74,.34),transparent 34%),
+      linear-gradient(145deg,#031712 0%,#064e3b 48%,#0b3248 100%);isolation:isolate}
+    .welcome-screen.show{display:grid;place-items:center}
+    .welcome-screen.is-closing{animation:welcomeOut .34s ease forwards}
+    .welcome-ambient{position:fixed;border-radius:50%;filter:blur(32px);pointer-events:none;opacity:.7;z-index:-1}
+    .welcome-ambient.one{width:360px;height:360px;left:-110px;top:8%;background:rgba(74,222,128,.25);animation:ambientDrift 9s ease-in-out infinite alternate}
+    .welcome-ambient.two{width:430px;height:430px;right:-160px;bottom:-90px;background:rgba(22,163,74,.30);animation:ambientDrift 11s ease-in-out infinite alternate-reverse}
+    .welcome-card{width:min(1120px,100%);position:relative;padding:clamp(24px,5vw,52px);border:1px solid rgba(255,255,255,.20);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.075));box-shadow:0 40px 110px rgba(0,18,12,.38);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);text-align:center;animation:welcomeIn .62s cubic-bezier(.2,.8,.2,1)}
+    .welcome-card:before{content:"";position:absolute;inset:1px;border-radius:33px;background:linear-gradient(120deg,rgba(255,255,255,.13),transparent 36%,rgba(134,239,172,.07));pointer-events:none}
+    .welcome-content{position:relative;z-index:1}
+    .welcome-logo-wrap{width:104px;height:104px;margin:0 auto 24px;position:relative;animation:logoFloat 4.2s ease-in-out infinite}
+    .welcome-client-logo,.welcome-logo-fallback{width:100%;height:100%;border-radius:27px;background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(220,252,231,.88));border:1px solid rgba(255,255,255,.72);box-shadow:0 18px 44px rgba(22,163,74,.30),0 0 0 9px rgba(134,239,172,.08);object-fit:contain;padding:12px}
+    .welcome-logo-fallback{display:grid;place-items:center;color:#14532d;font-size:.84rem;font-weight:950;line-height:1.05;letter-spacing:.10em;text-align:center;text-shadow:0 1px 0 #fff}
+    .welcome-client-logo[hidden],.welcome-logo-fallback[hidden]{display:none}
+    .welcome-eyebrow{display:inline-block;margin-bottom:13px;font-size:.78rem;font-weight:900;letter-spacing:.18em;color:#bbf7d0}
+    .welcome-card h1{max-width:850px;margin-inline:auto;font-size:clamp(2.35rem,6vw,5rem);text-wrap:balance}
+    .welcome-description{max-width:820px;margin:0 auto 28px;color:#e4f8ea;font-size:clamp(1rem,2vw,1.2rem)}
+    .welcome-selector-title{font-size:clamp(1.15rem,2.2vw,1.45rem);letter-spacing:-.02em;margin:8px 0 17px}
+    .device-choice-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 auto 20px}
+    .device-choice{min-height:190px;padding:18px 14px;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:rgba(4,45,31,.36);color:#fff;text-align:center;transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease;position:relative}
+    .device-choice:hover{transform:translateY(-5px);border-color:rgba(134,239,172,.72);background:rgba(6,78,59,.55)}
+    .device-choice[aria-checked="true"]{border-color:#86efac;background:linear-gradient(145deg,rgba(22,163,74,.60),rgba(4,54,38,.58));box-shadow:0 16px 42px rgba(22,163,74,.26),inset 0 0 0 2px rgba(220,252,231,.20)}
+    .device-choice[aria-checked="true"]:after{content:"✓";position:absolute;right:12px;top:10px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#dcfce7;color:#14532d;font-weight:950}
+    .device-choice-name{display:block;font-weight:900;font-size:1.03rem;margin-top:11px}
+    .device-choice-width{display:block;color:#bbf7d0;font-size:.86rem;font-weight:850;margin:3px 0}
+    .device-choice-desc{display:block;color:#d8f4e1;font-size:.82rem;line-height:1.35}
+    .device-art{height:62px;display:grid;place-items:center;margin:auto;color:#dcfce7}
+    .device-art span{display:block;position:relative;border:3px solid currentColor;background:rgba(220,252,231,.07);box-shadow:inset 0 0 0 2px rgba(255,255,255,.06)}
+    .device-art.mobile span{width:31px;height:58px;border-radius:8px}.device-art.mobile span:after{content:"";position:absolute;width:8px;height:2px;border-radius:2px;background:currentColor;left:50%;bottom:4px;transform:translateX(-50%)}
+    .device-art.tablet span{width:48px;height:61px;border-radius:8px}.device-art.tablet span:after{content:"";position:absolute;width:3px;height:3px;border-radius:50%;background:currentColor;left:50%;bottom:3px;transform:translateX(-50%)}
+    .device-art.device-laptop span{width:76px;height:48px;border-radius:6px}.device-art.device-laptop span:after{content:"";position:absolute;left:-10px;right:-10px;height:5px;bottom:-8px;border-radius:0 0 8px 8px;background:currentColor}
+    .device-art.desktop span{width:78px;height:48px;border-radius:5px}.device-art.desktop span:before{content:"";position:absolute;width:3px;height:11px;background:currentColor;left:50%;bottom:-14px}.device-art.desktop span:after{content:"";position:absolute;width:28px;height:3px;background:currentColor;left:50%;bottom:-16px;transform:translateX(-50%)}
+    .welcome-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:11px;margin-top:17px}
+    .welcome-actions .btn{min-width:210px}
+    .welcome-primary{background:linear-gradient(135deg,#22c55e,#15803d);box-shadow:0 14px 34px rgba(34,197,94,.30)}
+    .welcome-secondary{background:rgba(255,255,255,.94);color:#14532d;border-color:rgba(255,255,255,.9)}
+    .welcome-skip{display:inline-block;margin-top:16px;color:#dcfce7;background:transparent;border:0;text-decoration:underline;text-underline-offset:4px;font-weight:750}
+    .welcome-note{margin:10px 0 0;color:#d5f2de;font-size:.86rem}
+    .welcome-footer{margin-top:25px;color:#bde9ca;font-size:.84rem}
+    body.welcome-open{overflow:hidden}
+
+    /* Preview shell. A transformed shell makes fixed modals and floating
+       controls stay inside mobile/tablet simulations while sticky nav works. */
+    .preview-stage{min-height:100vh;position:relative}
+    .preview-shell{width:100%;min-height:100vh;margin-inline:auto;position:relative}
+    .preview-scroll{min-height:100vh;position:relative}
+    .preview-label{display:none}
+    body.preview-simulated{overflow:hidden;background:#03150e}
+    body.preview-simulated .preview-stage{height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:38px 16px 16px;background:radial-gradient(circle at 12% 14%,rgba(74,222,128,.16),transparent 28%),radial-gradient(circle at 88% 86%,rgba(22,163,74,.18),transparent 30%),#03150e}
+    body.preview-simulated .preview-shell{height:calc(100vh - 54px);min-height:0;border:1px solid rgba(134,239,172,.30);background:var(--bg);box-shadow:0 34px 90px rgba(0,0,0,.48);overflow:hidden;transform:translateZ(0)}
+    body.preview-simulated .preview-scroll{height:100%;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable}
+    body.preview-simulated .preview-label{display:block;position:absolute;z-index:2200;left:50%;top:-30px;transform:translateX(-50%);padding:5px 11px;border-radius:999px;background:#dcfce7;color:#14532d;font-size:.76rem;font-weight:900;white-space:nowrap;box-shadow:0 7px 20px rgba(0,0,0,.20)}
+    body.preview-mobile .preview-shell{width:390px;border-width:8px;border-color:#172923;border-radius:34px}
+    body.preview-tablet .preview-shell{width:768px;border-width:9px;border-color:#172923;border-radius:31px}
+    body.preview-laptop .preview-shell{width:min(1280px,calc(100vw - 32px));border-radius:18px}
+    body.preview-desktop .preview-shell{width:min(1440px,calc(100vw - 24px));border-radius:10px}
+
+    /* Simulated breakpoints: normal CSS media queries read the browser width,
+       so these scoped rules make the content itself respond to preview width. */
+    body.preview-mobile .main-nav,body.preview-tablet .main-nav{position:fixed;left:18px;right:18px;top:88px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px;padding:13px;display:none;flex-direction:column;align-items:stretch}
+    body.preview-mobile .main-nav.open,body.preview-tablet .main-nav.open{display:flex}
+    body.preview-mobile .main-nav a,body.preview-tablet .main-nav a{padding:12px}
+    body.preview-mobile .menu-toggle,body.preview-tablet .menu-toggle{display:grid}
+    body.preview-mobile .nav-actions .btn,body.preview-tablet .nav-actions .btn{display:none}
+    body.preview-mobile .hero-grid,body.preview-mobile .case-study,body.preview-mobile .form-wrap,body.preview-tablet .hero-grid,body.preview-tablet .case-study,body.preview-tablet .form-wrap{grid-template-columns:1fr}
+    body.preview-mobile .hero-copy,body.preview-tablet .hero-copy{text-align:center}
+    body.preview-mobile .hero-copy .lead,body.preview-tablet .hero-copy .lead{margin-inline:auto}
+    body.preview-mobile .hero-actions,body.preview-mobile .proof-row,body.preview-tablet .hero-actions,body.preview-tablet .proof-row{justify-content:center}
+    body.preview-mobile .device-scene,body.preview-tablet .device-scene{max-width:720px;width:100%;margin:auto}
+    body.preview-mobile .grid-4,body.preview-tablet .grid-4{grid-template-columns:repeat(2,1fr)}
+    body.preview-mobile .process,body.preview-tablet .process{grid-template-columns:repeat(3,1fr)}
+    body.preview-mobile .process:before,body.preview-tablet .process:before{display:none}
+    body.preview-mobile .form-info,body.preview-tablet .form-info{position:static}
+    body.preview-mobile .footer-grid,body.preview-tablet .footer-grid{grid-template-columns:1.4fr 1fr 1fr}
+    body.preview-mobile .footer-grid>div:last-child,body.preview-tablet .footer-grid>div:last-child{grid-column:1/-1}
+    body.preview-mobile .service-grid{grid-template-columns:1fr;gap:13px}
+    body.preview-mobile .section{padding:72px 0}
+    body.preview-mobile .section-tight{padding:52px 0}
+    body.preview-mobile .container{width:min(100% - 26px,var(--content))}
+    body.preview-mobile .brand-text{font-size:.9rem}
+    body.preview-mobile .brand-text small,body.preview-mobile .nav-actions .icon-btn:nth-child(2){display:none}
+    body.preview-mobile .hero{padding-top:54px}
+    body.preview-mobile .hero-grid{gap:20px}
+    body.preview-mobile .device-scene{min-height:330px}
+    body.preview-mobile .laptop{width:91%;top:48px}
+    body.preview-mobile .phone{width:30%;left:2%;bottom:0}
+    body.preview-mobile .float-badge{display:none}
+    body.preview-mobile .grid-3,body.preview-mobile .package-grid,body.preview-mobile .transparency-grid,body.preview-mobile .grid-2,body.preview-mobile .comparison{grid-template-columns:1fr}
+    body.preview-mobile .service-card{min-height:auto}
+    body.preview-mobile .demo-shell{padding:9px;border-radius:22px}
+    body.preview-mobile .demo-window{grid-template-columns:1fr;min-height:auto}
+    body.preview-mobile .demo-sidebar{border-right:0;border-bottom:1px solid var(--line);display:flex;overflow-x:auto;gap:5px}
+    body.preview-mobile .demo-sidebar h3,body.preview-mobile .demo-progress{display:none}
+    body.preview-mobile .demo-tab{white-space:nowrap;width:auto}
+    body.preview-mobile .demo-main{padding:20px}
+    body.preview-mobile .feature-list-card ul{grid-template-columns:1fr}
+    body.preview-mobile .case-study{padding:28px;border-radius:24px}
+    body.preview-mobile .process{grid-template-columns:1fr}
+    body.preview-mobile .step{display:grid;grid-template-columns:60px 1fr;text-align:left;gap:12px}
+    body.preview-mobile .step-num{width:55px;height:55px;margin:0}
+    body.preview-mobile .package.featured{transform:none}
+    body.preview-mobile .form-grid{grid-template-columns:1fr}
+    body.preview-mobile .field.full{grid-column:auto}
+    body.preview-mobile .checkbox-grid{grid-template-columns:1fr}
+    body.preview-mobile .cta{padding:38px 22px}
+    body.preview-mobile .footer-grid{grid-template-columns:1fr}
+    body.preview-mobile .footer-grid>div{grid-column:auto!important}
+    body.preview-mobile .footer-bottom{flex-direction:column}
+    body.preview-mobile .install-preview{grid-template-columns:1fr}
+    body.preview-mobile .install-phone{margin:auto}
+    body.preview-mobile .certificate{padding:30px 16px}
+    body.preview-mobile .form-actions .btn,body.preview-mobile .hero-actions .btn{width:100%}
+    body.preview-mobile .proof-row{align-items:center;flex-direction:column}
+    body.preview-mobile .form-card,body.preview-mobile .form-info{padding:22px}
+    body.preview-mobile .section-head.center{text-align:left}
+    body.preview-mobile .audience-cloud{justify-content:flex-start}
+
+    .preview-control{position:fixed;left:18px;bottom:18px;z-index:4800;display:none}
+    body.modal-open .preview-control{display:none!important}
+    .preview-control.show{display:block}
+    .preview-control-toggle{min-height:42px;padding:9px 13px;border:1px solid rgba(134,239,172,.45);border-radius:13px;background:rgba(5,46,32,.94);color:#fff;font-weight:850;box-shadow:0 15px 35px rgba(0,0,0,.25);backdrop-filter:blur(12px)}
+    .preview-control-menu{position:absolute;left:0;bottom:51px;width:245px;padding:10px;border-radius:16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .preview-control-menu[hidden]{display:none}
+    .preview-control-menu strong{display:block;padding:7px 9px 9px;font-size:.86rem}
+    .preview-control-menu button{width:100%;padding:10px;border:0;border-radius:10px;background:transparent;color:var(--ink);text-align:left;font-weight:750}
+    .preview-control-menu button:hover{background:var(--surface-2)}
+    .preview-current{display:block;padding:0 9px 8px;color:var(--muted);font-size:.78rem}
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    @keyframes welcomeIn{from{opacity:0;transform:translateY(22px) scale(.975)}to{opacity:1;transform:none}}
+    @keyframes welcomeOut{to{opacity:0;transform:scale(1.015)}}
+    @keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+    @keyframes ambientDrift{from{transform:translate3d(-10px,-8px,0) scale(.95)}to{transform:translate3d(18px,14px,0) scale(1.08)}}
+
+    @media (max-width:820px){
+      .welcome-screen{padding:13px}.welcome-card{border-radius:26px;padding:23px 16px}.welcome-logo-wrap{width:84px;height:84px;margin-bottom:18px}.device-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.device-choice{min-height:158px;padding:13px 8px}.device-art{height:48px;transform:scale(.82)}
+      body.preview-simulated{overflow:auto;background:var(--bg)}
+      body.preview-simulated .preview-stage{height:auto;min-height:100vh;display:block;padding:0;background:var(--bg)}
+      body.preview-simulated .preview-shell{width:100%!important;height:auto;min-height:100vh;border:0!important;border-radius:0!important;box-shadow:none;overflow:visible;transform:none}
+      body.preview-simulated .preview-scroll{height:auto;min-height:100vh;overflow:visible}
+      body.preview-simulated .preview-label{position:fixed;top:auto;bottom:72px;left:12px;transform:none;font-size:.7rem;z-index:1080}
+      .preview-control{left:10px;bottom:12px}.preview-control-toggle{font-size:.8rem}.preview-control-menu{width:min(245px,calc(100vw - 20px))}
+    }
+    @media (max-width:500px){.device-choice-grid{gap:9px}.device-choice-desc{font-size:.76rem}.welcome-actions .btn{width:100%}.welcome-card h1{font-size:2.25rem}.welcome-description{font-size:.94rem}.welcome-footer{margin-top:17px}}
+    @media print{
+      .welcome-screen,.preview-control,.preview-label{display:none!important}
+      body.preview-simulated{overflow:visible!important;background:#fff!important}
+      body.preview-simulated .preview-stage{height:auto!important;display:block!important;padding:0!important;background:#fff!important}
+      body.preview-simulated .preview-shell{width:100%!important;height:auto!important;min-height:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important;transform:none!important}
+      body.preview-simulated .preview-scroll{height:auto!important;overflow:visible!important}
+    }
+    .reveal{opacity:0;transform:translateY(20px);transition:.55s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+    @media (max-width:1020px){
+      .main-nav{position:fixed;left:18px;right:18px;top:88px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:18px;padding:13px;display:none;flex-direction:column;align-items:stretch}
+      .main-nav.open{display:flex}.main-nav a{padding:12px}.menu-toggle{display:grid}.nav-actions .btn{display:none}
+      .hero-grid,.case-study,.form-wrap{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-copy .lead{margin-inline:auto}.hero-actions,.proof-row{justify-content:center}.device-scene{max-width:720px;width:100%;margin:auto}.service-grid{grid-template-columns:repeat(3,1fr)}
+      .grid-4{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(3,1fr)}.process:before{display:none}.form-info{position:static}
+      .footer-grid{grid-template-columns:1.4fr 1fr 1fr}.footer-grid>div:last-child{grid-column:1/-1}
+    }
+    @media (max-width:760px){
+      .section{padding:72px 0}.section-tight{padding:52px 0}.container{width:min(100% - 26px,var(--content))}.brand-text{font-size:.9rem}.brand-text small{display:none}.nav-actions .icon-btn:nth-child(2){display:none}
+      .hero{padding-top:54px}.hero-grid{gap:20px}.device-scene{min-height:390px}.laptop{width:91%;top:55px}.phone{width:30%;left:2%}.float-badge.two{display:none}.float-badge.one{font-size:.72rem;bottom:10px}
+      .service-grid,.grid-3,.package-grid,.transparency-grid{grid-template-columns:1fr}.grid-2,.comparison{grid-template-columns:1fr}.service-grid{gap:13px}.service-card{min-height:auto}
+      .demo-shell{padding:9px;border-radius:22px}.demo-window{grid-template-columns:1fr;min-height:auto}.demo-sidebar{border-right:0;border-bottom:1px solid var(--line);display:flex;overflow-x:auto;gap:5px}.demo-sidebar h3,.demo-progress{display:none}.demo-tab{white-space:nowrap;width:auto}.demo-main{padding:20px}.feature-list-card ul{grid-template-columns:1fr}
+      .case-study{padding:28px}.process{grid-template-columns:1fr}.step{display:grid;grid-template-columns:60px 1fr;text-align:left;gap:12px}.step-num{width:55px;height:55px;margin:0}.package.featured{transform:none}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.checkbox-grid{grid-template-columns:1fr}
+      .cta{padding:38px 22px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child,.footer-grid>div:last-child{grid-column:1/-1}.footer-bottom{flex-direction:column}.install-preview{grid-template-columns:1fr}.install-phone{margin:auto}.certificate{padding:30px 16px}.form-actions .btn{width:100%}
+    }
+    @media (max-width:460px){.service-grid,.grid-4,.footer-grid{grid-template-columns:1fr}.footer-grid>div{grid-column:auto!important}.hero-actions .btn{width:100%}.proof-row{align-items:center;flex-direction:column}.device-scene{min-height:330px}.laptop{top:48px}.float-badge.one{display:none}.phone{bottom:0}.form-card,.form-info{padding:22px}.case-study{border-radius:24px}.section-head.center{text-align:left}.audience-cloud{justify-content:flex-start}}
+    @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
+    @media print{.site-header,.hero-actions,.floating-whatsapp,.back-top,.demo-sidebar,.demo-toolbar,.cta-actions,footer,.offline-bar{display:none!important}body{background:#fff;color:#111}.section{padding:28px 0}.card,.case-study,.cta{box-shadow:none;border:1px solid #bbb}.case-study,.cta{background:#fff;color:#111}.case-study .lead,.cta .lead{color:#333}.container{width:100%}}
+  </style>
+</head>
+<body>
+<!-- Premium first-visit welcome and device preview selector -->
+<section class="welcome-screen" id="welcomeScreen" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeDescription" hidden>
+  <span class="welcome-ambient one" aria-hidden="true"></span><span class="welcome-ambient two" aria-hidden="true"></span>
+  <div class="welcome-card" id="welcomeCard">
+    <div class="welcome-content">
+      <!-- CLIENT LOGO REPLACEMENT:
+           Add the real logo at assets/images/client-logo.png, or change
+           CONFIG.clientLogoPath. The styled fallback appears automatically
+           when the image is missing or cannot be loaded. -->
+      <div class="welcome-logo-wrap" aria-label="Client logo preview">
+        <img class="welcome-client-logo" id="welcomeClientLogo" alt="" hidden>
+        <div class="welcome-logo-fallback" id="welcomeLogoFallback" aria-hidden="true"><span>YOUR<br>LOGO<br>HERE</span></div>
+      </div>
+      <span class="welcome-eyebrow">YOUR CONTENT. REIMAGINED.</span>
+      <h1 id="welcomeTitle">See What Your Content Could Become</h1>
+      <p class="welcome-description" id="welcomeDescription">From training manuals and policies to courses, assessments, videos, certificates and installable apps—explore the possibilities across every screen.</p>
+      <h2 class="welcome-selector-title" id="deviceSelectorTitle">How would you like to preview the experience?</h2>
+      <div class="device-choice-grid" role="radiogroup" aria-labelledby="deviceSelectorTitle">
+        <button class="device-choice" type="button" role="radio" aria-checked="false" data-preview-choice="mobile" aria-label="Mobile preview, 390 pixels, see the phone experience"><span class="device-art mobile" aria-hidden="true"><span></span></span><span class="device-choice-name">Mobile</span><span class="device-choice-width">390 px</span><span class="device-choice-desc">See the phone experience</span></button>
+        <button class="device-choice" type="button" role="radio" aria-checked="false" data-preview-choice="tablet" aria-label="Tablet preview, 768 pixels, preview the tablet layout"><span class="device-art tablet" aria-hidden="true"><span></span></span><span class="device-choice-name">Tablet</span><span class="device-choice-width">768 px</span><span class="device-choice-desc">Preview the tablet layout</span></button>
+        <button class="device-choice" type="button" role="radio" aria-checked="false" data-preview-choice="laptop" aria-label="Laptop preview, 1280 pixels, explore the laptop view"><span class="device-art device-laptop" aria-hidden="true"><span></span></span><span class="device-choice-name">Laptop</span><span class="device-choice-width">1280 px</span><span class="device-choice-desc">Explore the laptop view</span></button>
+        <button class="device-choice" type="button" role="radio" aria-checked="false" data-preview-choice="desktop" aria-label="Desktop preview, 1440 pixels, view the full desktop experience"><span class="device-art desktop" aria-hidden="true"><span></span></span><span class="device-choice-name">Desktop</span><span class="device-choice-width">1440 px</span><span class="device-choice-desc">View the full desktop experience</span></button>
+      </div>
+      <p class="welcome-note">You can change the preview size at any time.</p>
+      <div class="welcome-actions">
+        <button class="btn welcome-primary" id="enterShowcase" type="button">Enter the Showcase</button>
+        <button class="btn welcome-secondary" id="useAutoPreview" type="button">Use My Device Automatically</button>
+      </div>
+      <button class="welcome-skip" id="skipWelcome" type="button">Skip Welcome</button>
+      <p class="welcome-footer">Designed by Glenroy Griffiths • Jamaica</p>
+    </div>
+  </div>
+</section>
+<div class="sr-only" id="previewAnnouncement" aria-live="polite" aria-atomic="true"></div>
+
+<div class="preview-stage" id="previewStage" data-preview="auto">
+  <div class="preview-shell" id="previewShell">
+    <div class="preview-label" id="previewLabel" aria-hidden="true">Automatic responsive preview</div>
+    <div class="preview-scroll" id="previewScroll">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="offline-bar" id="offlineBar">You are offline. Core pages remain available, but external links may not open.</div>
+
+<!-- Reusable SVG icon sprite -->
+<svg aria-hidden="true" width="0" height="0" style="position:absolute"><defs>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5z"/><path d="M4 6.5v13M8 7h8M8 11h7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8M12 16v5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.1 7 22l5-3 5 3-1.2-8.9"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.3 4.7L18 9l-4.7 1.3L12 15l-1.3-4.7L6 9l4.7-1.3zM19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4zM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+</defs></svg>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top" aria-label="Custom Digital Learning Hubs home">
+      <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24"><use href="#i-book"/></svg></span>
+      <span class="brand-text">Custom Digital Learning Hubs<small>Designed in Jamaica</small></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+      <a href="#services">What I Build</a><a href="#demo">Live Demo</a><a href="#features">Features</a><a href="#example">Example</a><a href="#packages">Options</a><a href="#request">Request</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="textSizeBtn" aria-label="Increase text size" title="Adjust text size">A+</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Switch colour theme" title="Dark or light mode"><svg class="icon"><use href="#i-moon"/></svg></button>
+      <a class="btn btn-primary btn-sm" href="#request">Request a Platform</a>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Custom-built digital experiences</span>
+        <h1>Turn Your Content Into an <span>Interactive Digital Experience</span></h1>
+        <p class="lead">From a simple handbook or training manual to a complete learning platform with lessons, assessments, certificates, videos, AI assistance, offline access and app installation.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://glenroygriffiths876-collab.github.io/JASDIS-STUDY-HUB/" target="_blank" rel="noopener">View Live Example <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-secondary" href="#features">Explore Features</a>
+          <a class="btn btn-gold" href="#request">Request a Platform</a>
+          <button class="btn btn-ghost contact-whatsapp">WhatsApp Me</button>
+        </div>
+        <div class="proof-row" aria-label="Website strengths">
+          <span><b>✓</b> Mobile-first</span><span><b>✓</b> Installable PWA</span><span><b>✓</b> Accessible</span><span><b>✓</b> GitHub-ready</span>
+        </div>
+      </div>
+      <div class="device-scene reveal" aria-label="Illustration of a learning platform on a laptop and phone">
+        <div class="glow"></div>
+        <div class="laptop" aria-hidden="true">
+          <div class="laptop-screen"><div class="app-ui"><aside class="app-side"><div class="app-logo"></div><div class="app-navline active"></div><div class="app-navline"></div><div class="app-navline"></div><div class="app-navline"></div><div class="app-navline"></div></aside><div class="app-main"><div class="app-banner"></div><div class="app-cards"><div class="app-card"></div><div class="app-card"></div><div class="app-card"></div><div class="app-card"></div><div class="app-card"></div><div class="app-card"></div></div></div></div></div><div class="laptop-base"></div>
+        </div>
+        <div class="phone" aria-hidden="true"><div class="phone-screen"><div class="phone-notch"></div><div class="phone-hero"></div><div class="phone-card"></div><div class="phone-card"></div><div class="phone-card"></div><div class="phone-card"></div></div></div>
+        <div class="float-badge one"><span class="pulse-dot"></span> Progress saved automatically</div>
+        <div class="float-badge two"><svg class="icon" style="color:var(--brand)"><use href="#i-award"/></svg> Certificates & assessments</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow">What I can create</span><h2>More than a website—an organised digital platform</h2><p class="lead">Your existing information can become a polished, easy-to-use experience for learning, orientation, service delivery or resource access.</p></div>
+      <div class="service-grid" id="serviceGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="demo" style="background:var(--surface-2)">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow">Try it yourself</span><h2>Try a Mini Demonstration</h2><p class="lead">Open a sample lesson, complete an assessment, search content, hear read-aloud, preview a certificate and test an AI-style learning assistant.</p></div>
+      <div class="demo-shell reveal">
+        <div class="demo-window">
+          <aside class="demo-sidebar" aria-label="Mini demonstration menu">
+            <h3>Mini Learning Hub</h3>
+            <button class="demo-tab active" data-panel="lesson"><svg class="icon"><use href="#i-book"/></svg> Sample Lesson</button>
+            <button class="demo-tab" data-panel="quiz"><svg class="icon"><use href="#i-check"/></svg> 3-Question Quiz</button>
+            <button class="demo-tab" data-panel="search"><svg class="icon"><use href="#i-search"/></svg> Search</button>
+            <button class="demo-tab" data-panel="assistant"><svg class="icon"><use href="#i-spark"/></svg> AI Assistant</button>
+            <button class="demo-tab" data-panel="install"><svg class="icon"><use href="#i-phone"/></svg> Install Preview</button>
+            <div class="demo-progress"><strong>Demo progress</strong><p class="small muted" id="demoProgressText">0% complete</p><div class="progress-track"><div class="progress-fill" id="demoProgressFill"></div></div></div>
+          </aside>
+          <div class="demo-main">
+            <section class="demo-panel active" id="panel-lesson">
+              <span class="eyebrow">Module 1 • Digital Learning Basics</span><h2 style="font-size:2rem;margin-top:12px">Designing an Effective Learning Journey</h2><p class="muted">This fictional lesson demonstrates how complex material can be transformed into clear, manageable learning content.</p>
+              <div class="demo-toolbar"><button class="btn btn-secondary btn-sm" id="readLesson"><svg class="icon"><use href="#i-volume"/></svg> Read Aloud</button><button class="btn btn-secondary btn-sm" id="stopReading">Stop</button><button class="btn btn-secondary btn-sm" id="previewCertificate"><svg class="icon"><use href="#i-award"/></svg> Preview Certificate</button></div>
+              <article class="lesson-box" id="sampleLessonText">
+                <h3>Learning objective</h3><p>By the end of this lesson, the learner should be able to identify three qualities of an effective digital lesson.</p>
+                <h3>Key idea</h3><p>A strong digital lesson is organised, interactive and accessible. It breaks information into meaningful sections, gives learners opportunities to practise, and works across different devices.</p>
+                <ul><li><strong>Organised:</strong> Clear headings and logical sequencing help learners find information quickly.</li><li><strong>Interactive:</strong> Questions, activities and feedback turn passive reading into active learning.</li><li><strong>Accessible:</strong> Good contrast, keyboard support and read-aloud options help more people participate.</li></ul>
+                <div class="note"><strong>Practice point:</strong> Technology should make information easier to use—not simply reproduce a long document on a screen.</div>
+              </article>
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap"><span class="check-pill" id="lessonStatus">Lesson not yet completed</span><button class="btn btn-primary" id="completeLesson">Mark Lesson Complete</button></div>
+            </section>
+            <section class="demo-panel" id="panel-quiz"><span class="eyebrow">Knowledge check</span><h2 style="font-size:2rem;margin-top:12px">Three Sample Questions</h2><form id="demoQuiz"></form><button class="btn btn-primary" id="submitQuiz" type="button">Submit Answers</button><div class="quiz-result" id="quizResult" aria-live="polite"></div></section>
+            <section class="demo-panel" id="panel-search"><span class="eyebrow">Instant search</span><h2 style="font-size:2rem;margin-top:12px">Search Sample Content</h2><p class="muted">Try words such as <strong>accessible</strong>, <strong>certificate</strong>, <strong>offline</strong> or <strong>assessment</strong>.</p><label for="demoSearch">Search the mini hub</label><input id="demoSearch" type="search" placeholder="Enter a topic…" autocomplete="off"><div class="search-results" id="demoSearchResults" aria-live="polite"></div></section>
+            <section class="demo-panel" id="panel-assistant"><span class="eyebrow">Local content assistant</span><h2 style="font-size:2rem;margin-top:12px">Simulated AI Learning Assistant</h2><p class="muted">This demonstration searches a small local knowledge base. A full AI connection would require a secure backend.</p><div class="chat-box" id="chatBox"><div class="bubble bot">Hello! Ask me about assessments, accessibility, certificates, offline access or progress tracking.</div></div><div class="chat-row"><input id="chatInput" type="text" placeholder="Ask a sample question…"><button class="btn btn-primary" id="chatSend">Ask</button></div></section>
+            <section class="demo-panel" id="panel-install"><span class="eyebrow">Installable experience</span><h2 style="font-size:2rem;margin-top:12px">Preview Mobile Installation</h2><div class="install-preview"><div class="install-phone" aria-hidden="true"><div class="install-phone-screen"><div class="install-icon">DLH</div><strong>Digital Learning Hub</strong><p class="small">Ready to install</p><div class="btn btn-primary btn-sm" style="margin-top:24px">Install App</div></div></div><div><h3>Feels like an app, remains a website</h3><p>Progressive Web Apps can be added to a home screen, open in a standalone window and cache core content for offline use after the first complete visit.</p><button class="btn btn-primary" id="openInstallModal">Open Installation Screen</button><p class="small muted" style="margin-top:12px">Browser support varies. The user must approve installation.</p></div></div></section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Available features</span><h2>Choose the capabilities that fit your platform</h2><p class="lead">Features can be combined and tailored to the organisation, audience, content and available infrastructure.</p></div>
+      <div class="feature-tabs" role="tablist" aria-label="Feature categories">
+        <button class="feature-tab active" data-feature="learning">Learning & Content</button><button class="feature-tab" data-feature="assessment">Assessment</button><button class="feature-tab" data-feature="experience">User Experience</button><button class="feature-tab" data-feature="advanced">Advanced Options</button>
+      </div>
+      <div class="feature-panel active grid grid-2" id="feature-learning"></div><div class="feature-panel grid grid-2" id="feature-assessment"></div><div class="feature-panel grid grid-2" id="feature-experience"></div><div class="feature-panel grid grid-2" id="feature-advanced"></div>
+      <div class="note" style="margin-top:22px"><strong>Technical transparency:</strong> advanced AI, central analytics, secure accounts, payments and subscriptions may require approved third-party services, secure hosting or a backend—not just frontend code.</div>
+    </div>
+  </section>
+
+  <section class="section-tight" style="background:var(--surface-2)">
+    <div class="container"><div class="section-head center reveal"><span class="eyebrow">Before and after</span><h2>From scattered information to one connected experience</h2></div><div class="comparison reveal"><article class="card compare-card before"><h3>Before</h3><p class="muted">Useful information exists, but it is difficult to navigate and engage with.</p><ul><li>Long PDF documents</li><li>Difficult navigation</li><li>Scattered videos and links</li><li>Limited interaction</li><li>No progress tracking</li><li>No mobile app experience</li><li>Paper-based examinations</li></ul></article><article class="card compare-card after"><h3>After</h3><p class="muted">Content becomes structured, searchable, interactive and easier to access.</p><ul><li>Organised digital modules</li><li>Powerful search</li><li>Videos embedded in the platform</li><li>Interactive assessments</li><li>Saved progress</li><li>Installable mobile experience</li><li>Downloadable certificates</li><li>Centralised resources</li></ul></article></div></div>
+  </section>
+
+  <section class="section" id="example">
+    <div class="container"><div class="case-study reveal"><div><span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff">Live case study</span><h2 style="margin-top:15px">See What Is Possible</h2><p class="lead">The JASDIS Study Hub demonstrates how technical training content can be transformed into a modern learning platform with structured lessons, assessments, job aids and an installable mobile experience.</p><div class="case-tags"><span>700+ practice questions</span><span>Structured modules</span><span>Embedded videos</span><span>Searchable lessons</span><span>AI-style assistance</span><span>Certificates</span><span>Progress tracking</span><span>Read-aloud</span><span>Offline access</span><span>Issue reporting</span><span>Algorithms</span><span>Mobile optimisation</span></div><div class="hero-actions"><a class="btn btn-gold" href="https://glenroygriffiths876-collab.github.io/JASDIS-STUDY-HUB/" target="_blank" rel="noopener">Open the JASDIS Study Hub</a><a class="btn btn-secondary" href="https://glenroygriffiths876-collab.github.io/JASDIS-STUDY-HUB/?install=1" target="_blank" rel="noopener">Install the JASDIS Study Hub</a></div><p class="small" style="color:#cfe7e2">This showcase does not reproduce confidential or protected JASDIS course content.</p></div><div class="case-visual" aria-hidden="true"><div class="case-screen"><div class="case-screen-top"><strong>JASDIS Study Hub</strong><div style="font-size:.8rem;opacity:.8">Professional learning dashboard</div></div><div class="case-mini-grid"><div class="case-mini-card"><b>700+</b>Practice questions</div><div class="case-mini-card"><b>12</b>Structured modules</div><div class="case-mini-card"><b>24/7</b>Offline-ready access</div><div class="case-mini-card"><b>PWA</b>Installable experience</div></div></div></div></div></div>
+  </section>
+
+  <section class="section" style="background:var(--surface-2)">
+    <div class="container"><div class="section-head center reveal"><span class="eyebrow">How it works</span><h2>A clear five-step development process</h2></div><div class="process reveal"><div class="step"><div class="step-num">1</div><div><h3>Consultation</h3><p>We discuss the organisation, audience, goals and required features.</p></div></div><div class="step"><div class="step-num">2</div><div><h3>Content Submission</h3><p>You provide manuals, presentations, videos, policies, branding and resources.</p></div></div><div class="step"><div class="step-num">3</div><div><h3>Content Organisation</h3><p>Material is transformed into modules, lessons, resources and assessments.</p></div></div><div class="step"><div class="step-num">4</div><div><h3>Development</h3><p>The interface, branding, mobile experience and features are built.</p></div></div><div class="step"><div class="step-num">5</div><div><h3>Review & Launch</h3><p>You review the platform, corrections are made and the final version is launched.</p></div></div></div></div>
+  </section>
+
+  <section class="section">
+    <div class="container"><div class="section-head center reveal"><span class="eyebrow">What you receive</span><h2>A complete, usable platform—not only a visual concept</h2></div><div class="grid grid-4 reveal" id="deliverablesGrid"></div></div>
+  </section>
+
+  <section class="section" id="packages" style="background:var(--surface-2)">
+    <div class="container"><div class="section-head center reveal"><span class="eyebrow">Platform options</span><h2>Start with the level that fits your project</h2><p class="lead">Packages are editable starting points. Final scope depends on your content, integrations, hosting and support needs.</p></div><div class="package-grid reveal"><article class="card package"><div class="icon-box"><svg class="icon"><use href="#i-file"/></svg></div><h3 style="margin-top:18px">Starter Hub</h3><p class="muted">A polished, organised resource or introductory learning website.</p><ul><li>Branded homepage</li><li>Up to five modules</li><li>Basic search</li><li>Videos and resources</li><li>Mobile-friendly design</li><li>Contact section</li></ul><button class="btn btn-secondary quote-btn" data-package="Starter Hub">Request a Quote</button></article><article class="card package featured"><span class="popular">Most versatile</span><div class="icon-box"><svg class="icon"><use href="#i-book"/></svg></div><h3 style="margin-top:18px">Professional Learning Hub</h3><p class="muted">A full training experience with assessments, progress and installation.</p><ul><li>Structured modules</li><li>Assessments</li><li>Progress tracking</li><li>Certificates</li><li>Read-aloud</li><li>Installation</li><li>Offline access</li><li>Issue reporting</li></ul><button class="btn btn-primary quote-btn" data-package="Professional Learning Hub">Request a Quote</button></article><article class="card package"><div class="icon-box"><svg class="icon"><use href="#i-spark"/></svg></div><h3 style="margin-top:18px">Advanced Smart Platform</h3><p class="muted">A customised solution with deeper integrations and smart tools.</p><ul><li>Large question bank</li><li>AI learning assistant</li><li>Custom tools</li><li>User accounts where required</li><li>Membership or subscriptions</li><li>Analytics</li><li>Secure backend integration</li><li>Custom dashboards</li></ul><button class="btn btn-secondary quote-btn" data-package="Advanced Smart Platform">Request a Quote</button></article></div><p class="small muted" style="text-align:center;margin-top:24px">Final cost depends on the volume of content, required features, hosting, integrations and level of ongoing support.</p></div>
+  </section>
+
+  <section class="section"><div class="container"><div class="section-head center reveal"><span class="eyebrow">Who this is for</span><h2>Flexible enough for many types of organisations</h2></div><div class="audience-cloud reveal" id="audienceCloud"></div></div></section>
+
+  <section class="section" id="request" style="background:var(--surface-2)">
+    <div class="container"><div class="section-head reveal"><span class="eyebrow">Project enquiry</span><h2>Tell me what you want to transform</h2><p class="lead">Complete the form and generate a ready-to-send project summary for email or WhatsApp.</p></div><div class="form-wrap"><aside class="form-info reveal"><h3>What happens next?</h3><p class="muted">Your answers create a concise project brief. No information is sent to a server by this website.</p><ul><li>✓ Your project needs are clarified</li><li>✓ The right platform level can be suggested</li><li>✓ A quotation can be based on real scope</li><li>✓ You remain in control of what is shared</li></ul><hr style="border:0;border-top:1px solid rgba(255,255,255,.18);margin:22px 0"><p class="small muted">Direct email and WhatsApp destinations are controlled in the website configuration. When they are not set, the brief is copied for you instead.</p></aside><form class="card form-card reveal" id="enquiryForm"><div class="form-grid"><div class="field"><label for="name">Name *</label><input id="name" name="name" required></div><div class="field"><label for="organisation">Organisation</label><input id="organisation" name="organisation"></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email"></div><div class="field"><label for="phone">Telephone or WhatsApp</label><input id="phone" name="phone" type="tel"></div><div class="field"><label for="platformType">Type of platform *</label><select id="platformType" name="platformType" required><option value="">Select one</option><option>Starter Hub</option><option>Professional Learning Hub</option><option>Advanced Smart Platform</option><option>Custom / Not sure</option></select></div><div class="field"><label for="audience">Target audience</label><input id="audience" name="audience" placeholder="e.g. employees, students, clients"></div><div class="field"><label for="modules">Estimated number of modules</label><select id="modules" name="modules"><option>Not sure</option><option>1–5</option><option>6–10</option><option>11–20</option><option>More than 20</option></select></div><div class="field"><label for="contentFormat">Main content format</label><select id="contentFormat" name="contentFormat"><option>Mixed formats</option><option>PDF/manual</option><option>Word documents</option><option>PowerPoint</option><option>Videos and links</option><option>Existing website</option><option>Content still being developed</option></select></div><div class="field full"><label>Desired features</label><div class="checkbox-grid"><label class="check-option"><input type="checkbox" name="features" value="Assessments"> Assessments</label><label class="check-option"><input type="checkbox" name="features" value="Certificates"> Certificates</label><label class="check-option"><input type="checkbox" name="features" value="Read-aloud"> Read-aloud</label><label class="check-option"><input type="checkbox" name="features" value="Offline access"> Offline access</label><label class="check-option"><input type="checkbox" name="features" value="App installation"> App installation</label><label class="check-option"><input type="checkbox" name="features" value="AI assistant"> AI assistant</label><label class="check-option"><input type="checkbox" name="features" value="User accounts"> User accounts</label><label class="check-option"><input type="checkbox" name="features" value="Payments/subscriptions"> Payments or subscriptions</label></div></div><div class="field"><label for="launchDate">Expected launch date</label><input id="launchDate" name="launchDate" type="date"></div><div class="field"><label for="budget">Budget range</label><select id="budget" name="budget"><option>Prefer to discuss</option><option>Small starter project</option><option>Moderate professional project</option><option>Advanced custom project</option><option>Phased development</option></select></div><div class="field full"><label for="description">Project description *</label><textarea id="description" name="description" required placeholder="Describe the content you have, the problem you want to solve and any important requirements."></textarea></div></div><div class="form-actions"><button class="btn btn-primary" id="emailRequest" type="button">Send by Email</button><button class="btn btn-gold" id="whatsappRequest" type="button">Send by WhatsApp</button><button class="btn btn-secondary" id="copyRequest" type="button">Copy Project Brief</button></div><div class="form-status" id="formStatus" aria-live="polite"></div></form></div></div>
+  </section>
+
+  <section class="section"><div class="container"><div class="section-head center reveal"><span class="eyebrow">Frequently asked questions</span><h2>Common questions before starting</h2></div><div class="faq reveal" id="faqList"></div></div></section>
+
+  <section class="section-tight" style="background:var(--surface-2)"><div class="container"><div class="section-head center reveal"><span class="eyebrow">Important transparency</span><h2>Clear expectations from the beginning</h2></div><div class="transparency-grid reveal" id="transparencyGrid"></div></div></section>
+
+  <section class="section"><div class="container"><div class="cta reveal"><div class="cta-inner"><span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff">Let’s build something useful</span><h2 style="margin-top:15px">Ready to Transform Your Content?</h2><p class="lead">Whether you have a handbook, course, training manual, resource directory, examination bank or organisational programme, it can be transformed into an engaging digital platform.</p><div class="cta-actions"><button class="btn btn-gold contact-whatsapp">WhatsApp Me</button><a class="btn btn-secondary" href="#request">Request a Consultation</a><a class="btn btn-secondary" href="https://glenroygriffiths876-collab.github.io/JASDIS-STUDY-HUB/" target="_blank" rel="noopener">View the Live Example</a><button class="btn btn-secondary contact-email">Email Me</button></div></div></div></div></section>
+</main>
+
+<footer><div class="container"><div class="footer-grid"><div><a class="brand" href="#top"><span class="brand-mark"><svg class="icon"><use href="#i-book"/></svg></span><span class="brand-text">Custom Digital Learning Hubs<small>Glenroy Griffiths • Jamaica</small></span></a><p class="muted small" style="margin-top:16px">Transforming manuals, courses, policies, presentations, videos and organisational resources into professional digital experiences.</p></div><div><h3>Explore</h3><div class="footer-links"><a href="#services">What I Build</a><a href="#demo">Mini Demo</a><a href="#features">Features</a><a href="#example">Live Example</a></div></div><div><h3>Resources</h3><div class="footer-links"><a href="assets/images/digital-flyer.png" download>Download Digital Flyer</a><a href="assets/images/website-qr.png" download>Download QR Code</a><button class="btn btn-ghost btn-sm" id="copyLinkFooter" style="justify-content:flex-start">Copy Website Link</button></div></div><div><h3>Share</h3><div class="share-row"><button class="share-btn" data-share="native" aria-label="Share this website"><svg class="icon"><use href="#i-share"/></svg></button><button class="share-btn" data-share="whatsapp" aria-label="Share on WhatsApp">WA</button><button class="share-btn" data-share="facebook" aria-label="Share on Facebook">f</button><button class="share-btn" data-share="linkedin" aria-label="Share on LinkedIn">in</button><button class="share-btn" data-share="email" aria-label="Share by email">@</button></div><img src="assets/images/website-qr.png" width="110" height="110" alt="QR code linking to the website" style="margin-top:14px;border-radius:10px"></div></div><div class="footer-bottom"><span>© <span id="year"></span> Glenroy Griffiths. All rights reserved.</span><span>Version <span id="versionText">1.1.0</span> • Privacy-first: no form data is uploaded by this static site.</span></div></div></footer>
+
+<button class="floating-whatsapp contact-whatsapp" aria-label="Contact by WhatsApp" title="WhatsApp"><svg class="icon" style="width:28px;height:28px"><use href="#i-phone"/></svg></button>
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+<div class="toast" id="toast" aria-live="polite"></div>
+
+<!-- Certificate modal -->
+<div class="modal" id="certificateModal" role="dialog" aria-modal="true" aria-labelledby="certificateTitle"><div class="modal-card"><button class="icon-btn modal-close" data-close="certificateModal" aria-label="Close certificate preview"><svg class="icon"><use href="#i-x"/></svg></button><div class="certificate"><p style="letter-spacing:.18em;font-weight:900;color:var(--brand-dark)">CERTIFICATE OF COMPLETION</p><h2 id="certificateTitle">Digital Learning Basics</h2><p>This certifies that</p><div class="certificate-name">Sample Learner</div><p>has completed the demonstration lesson and assessment.</p><p><strong>Score:</strong> Demonstration preview &nbsp; • &nbsp; <strong>Learning hours:</strong> 0.25</p><p class="small">Certificate No. DEMO-2026-001 • Verification: SAMPLE-ONLY</p><div style="display:flex;justify-content:space-between;gap:20px;margin-top:36px"><div><strong>Glenroy Griffiths</strong><br><span class="small">Platform Designer</span></div><div><strong id="certificateDate"></strong><br><span class="small">Completion date</span></div></div></div><div class="form-actions"><button class="btn btn-secondary" onclick="window.print()">Print Preview</button></div></div></div>
+
+<!-- Install modal -->
+<div class="modal" id="installModal" role="dialog" aria-modal="true" aria-labelledby="installTitle"><div class="modal-card"><button class="icon-btn modal-close" data-close="installModal" aria-label="Close installation preview"><svg class="icon"><use href="#i-x"/></svg></button><h2 id="installTitle">Install Custom Digital Learning Hubs</h2><p class="muted">A Progressive Web App can be added to a supported device after the visitor approves installation.</p><div class="install-preview"><div class="install-phone"><div class="install-phone-screen"><div class="install-icon">DLH</div><strong>Digital Learning Hubs</strong><p class="small">Installable showcase</p></div></div><div><h3>On Android or desktop</h3><p>Use the browser’s Install button when available.</p><h3>On iPhone or iPad</h3><p>Open in Safari, tap Share, then choose <strong>Add to Home Screen</strong>.</p><button class="btn btn-primary" id="realInstallBtn">Install This Showcase</button></div></div></div></div>
+
+<!-- Copy-message modal -->
+<div class="modal" id="messageModal" role="dialog" aria-modal="true" aria-labelledby="messageTitle"><div class="modal-card"><button class="icon-btn modal-close" data-close="messageModal" aria-label="Close message preview"><svg class="icon"><use href="#i-x"/></svg></button><h2 id="messageTitle">Your project brief is ready</h2><p class="muted">No contact destination is configured yet, so the website has prepared the message without claiming it was sent.</p><textarea id="messagePreview" style="min-height:330px"></textarea><div class="form-actions"><button class="btn btn-primary" id="copyMessageModal">Copy Message</button><a class="btn btn-secondary" href="#request" data-close="messageModal">Return to Form</a></div></div></div>
+
+<!-- Dedicated ?install=1 screen -->
+    </div>
+  </div>
+</div>
+
+<div class="preview-control" id="previewControl">
+  <button class="preview-control-toggle" id="previewControlToggle" type="button" aria-expanded="false" aria-controls="previewControlMenu">Change Preview Size</button>
+  <div class="preview-control-menu" id="previewControlMenu" hidden>
+    <strong>Preview controls</strong><span class="preview-current" id="previewCurrent">Current: Automatic</span>
+    <button type="button" id="quickAutoPreview">Use My Device Automatically</button>
+    <button type="button" id="reopenWelcome">Choose another screen size</button>
+  </div>
+</div>
+
+<div class="install-screen" id="installScreen"><div class="install-screen-card"><img class="install-screen-logo" src="assets/icons/icon-192.png" alt="Custom Digital Learning Hubs app icon"><span class="eyebrow" style="background:rgba(255,255,255,.13);color:#fff">Installable showcase</span><h1 style="font-size:clamp(2.1rem,8vw,3.7rem);margin-top:16px">Install Custom Digital Learning Hubs</h1><p>This website can be added to a supported device for a more app-like experience. Your browser still requires your approval.</p><button class="btn btn-gold" id="installScreenBtn">Install App</button><button class="btn btn-secondary" id="continueWebsite">Continue to Website</button><p class="small" id="iosInstallHint" style="display:none;margin-top:15px">On iPhone or iPad: tap Share, then “Add to Home Screen”.</p></div></div>
+
+<script>
+'use strict';
+/* =====================================================================
+   WEBSITE CONFIGURATION
+   Replace the blank WhatsApp and email values before publishing if you
+   want direct contact buttons. Do not include spaces or + in WhatsApp.
+   ===================================================================== */
+const CONFIG = {
+  creatorName: 'Glenroy Griffiths',
+  businessName: 'Custom Digital Learning Hubs',
+  professionalTitle: 'Digital Learning Platform Designer & Developer',
+  location: 'Jamaica',
+  whatsappNumber: '',
+  emailAddress: '',
+  siteUrl: 'https://glenroygriffiths876-collab.github.io/custom-digital-learning-hubs/',
+  liveExample: 'https://glenroygriffiths876-collab.github.io/JASDIS-STUDY-HUB/',
+  installExample: 'https://glenroygriffiths876-collab.github.io/JASDIS-STUDY-HUB/?install=1',
+
+  // Welcome and responsive-preview settings
+  welcomeEnabled: true,
+  showWelcomeEveryVisit: false,
+  defaultPreviewMode: 'auto',
+  clientLogoPath: 'assets/images/client-logo.png',
+  clientLogoAlt: 'Your organisation logo',
+  welcomeStorageKey: 'dlh-welcome-completed',
+  previewStorageKey: 'dlh-preview-mode',
+
+  version: '1.1.0',
+  updated: '2026-08-02'
+};
+
+const SERVICES = [
+  ['book','Online training platforms','Turn a complete course into structured modules, lessons, activities and assessments.'],
+  ['users','Employee orientation systems','Give new staff one organised place for policies, procedures, videos and knowledge checks.'],
+  ['award','Professional study hubs','Support examination preparation with lessons, question banks, progress tracking and review tools.'],
+  ['monitor','School learning portals','Create age-appropriate learning areas with activities, resources and simple navigation.'],
+  ['spark','Health education platforms','Present technical or public-health information in a clear, accessible and engaging format.'],
+  ['search','Community resource directories','Help users quickly find services, locations, contacts, maps and practical guidance.'],
+  ['file','Policy and procedure libraries','Transform scattered documents into a searchable, organised and update-friendly resource centre.'],
+  ['check','Examination preparation systems','Build randomised practice tests, timed exams, rationales and weak-topic review.'],
+  ['users','Membership resource centres','Provide members with centralised documents, updates, tools and optional restricted access.'],
+  ['play','Conference and workshop platforms','Combine schedules, speaker information, resources, videos, feedback and certificates.'],
+  ['phone','Client education applications','Create practical, mobile-friendly tools that explain services and guide clients through next steps.'],
+  ['book','Interactive handbooks','Convert a long handbook into searchable sections, checklists, job aids and printable pages.'],
+  ['phone','Installable Progressive Web Apps','Allow supported devices to add the platform to a home screen and access cached content offline.'],
+  ['chart','Custom dashboards and reporting tools','Present progress, performance or programme data in understandable visual summaries.']
+];
+const FEATURES = {
+  learning: ['Structured modules and lessons','Learning objectives','Definitions and key points','Illustrations and diagrams','Case studies','Interactive activities','Downloadable resources','Searchable content','Printable handbooks'],
+  assessment: ['Large question banks','Randomised examinations','Multiple-choice questions','True-or-false questions','Case-based questions','Automatic scoring','Answer explanations','Weak-topic review','Timed and untimed examinations','Printable results','Certificate unlocking'],
+  experience: ['Progress tracking','Resume where you stopped','Mobile and desktop layouts','Dark and light modes','Adjustable text size','Read-aloud','Progress backup','Offline access','Install on home screen','Update notifications'],
+  advanced: ['AI learning assistant','Video library','Issue-reporting system','Organisation directory','Maps and navigation','QR codes','Donation or support button','Paid membership options','Subscription access','Custom certificates','CME or CPD tracking where approved','Analytics with secure backend','Multilingual content','Secure user accounts where required']
+};
+const DELIVERABLES = ['Professionally branded platform','Mobile, tablet and desktop compatibility','GitHub-ready or hosting-ready files','Installable web app','App icons and splash branding','Course and lesson structure','Assessments and question banks','Certificates','Search and progress tracking','Offline functionality','Update instructions','Deployment guidance','Optional ongoing maintenance'];
+const AUDIENCES = ['Professional associations','Schools and training institutions','Healthcare programmes','Government departments','NGOs','Churches','Community organisations','Small businesses','Consultants','Educators','Coaches','Conference organisers','Human resource departments'];
+const FAQS = [
+  ['What content do I need to provide?','Provide the materials you already have: manuals, policies, Word files, PDFs, presentations, videos, links, images, branding and any required wording. A content audit can identify what is usable and what is missing.'],
+  ['Can my existing PDF or handbook be converted?','Yes. The content can be reorganised into lessons, searchable sections, expandable guidance, checklists, activities and printable pages rather than simply embedding the PDF.'],
+  ['Can the platform be installed like an app?','Yes, when built as a Progressive Web App. Supported browsers can offer an installation option, but the user must still approve the installation.'],
+  ['Will it work on phones?','Yes. The interface is designed mobile-first and then adapted for tablets, laptops and desktop computers.'],
+  ['Can it work offline?','Core content can be cached after the first complete visit. External videos, live maps, forms and cloud services may still require internet access.'],
+  ['Can videos be embedded?','Yes, where the video provider permits embedding. A fallback link can be shown when embedding is restricted.'],
+  ['Can certificates be included?','Yes. Certificates can include names, scores, dates, learning hours, logos and verification codes. Accredited CME or CPD wording should only be used when officially authorised.'],
+  ['Can examinations be added?','Yes. Platforms can include module quizzes, full exams, randomisation, timers, answer explanations, incorrect-answer review and printable results.'],
+  ['Can users log in?','Yes, but secure accounts and central databases require appropriate backend hosting, authentication and privacy controls.'],
+  ['Can payments or subscriptions be added?','Yes, using an approved payment provider and secure backend. Payment details should never be handled only through unsecured frontend code.'],
+  ['Can the platform be updated later?','Yes. Content is structured so modules, questions, links, branding and resources can be updated without rebuilding the visual design from scratch.'],
+  ['Do I need to purchase hosting?','Not always. Static platforms can often use GitHub Pages. Accounts, databases, analytics, payments or advanced AI usually need additional secure hosting or services.'],
+  ['How long does development take?','Timing depends on the amount, condition and complexity of the content, the number of features, review cycles and whether a backend or integrations are required.'],
+  ['Can the platform use my organisation’s branding?','Yes. Colours, logos, typography, contact details, certificates and the installed app icon can be customised.']
+];
+const TRANSPARENCY = [
+  ['Installation','Installable web apps still require the user to approve installation. Browser and device support varies.'],
+  ['AI and accounts','True AI, secure accounts and central databases may require an API, backend and secure hosting.'],
+  ['Payments','Payment and subscription systems require approved providers and proper security controls.'],
+  ['Accreditation','CME or CPD wording should only be used when the relevant authority has officially approved it.'],
+  ['Timelines','Final timelines depend on the amount, quality and organisation of the content supplied.'],
+  ['Privacy','This static showcase stores demonstration progress locally and does not upload enquiry form data.']
+];
+const DEMO_SEARCH = [
+  {title:'Accessibility',section:'Sample Lesson',text:'Good contrast, keyboard support and read-aloud options help more people participate.'},
+  {title:'Assessments',section:'Assessment Features',text:'Question banks can include automatic scoring, explanations, timed modes and weak-topic review.'},
+  {title:'Certificates',section:'Completion Tools',text:'Certificates can unlock after required lessons and assessments are completed.'},
+  {title:'Offline Access',section:'User Experience',text:'Core content can be cached for offline access after the first complete visit.'},
+  {title:'Progress Tracking',section:'User Experience',text:'Learners can resume where they stopped and see completed lessons and scores.'},
+  {title:'Installable App',section:'Progressive Web App',text:'Supported devices can add the platform to a home screen after the user approves installation.'}
+];
+const QUIZ = [
+  {q:'Which approach best improves a long training manual?',opts:['Place every page in one scrolling screen','Break it into structured lessons and activities','Remove all detail','Use images without explanations'],correct:1,why:'Structured lessons make information easier to navigate, practise and remember.'},
+  {q:'True or false: an installable web app can install without user approval.',opts:['True','False'],correct:1,why:'Browsers still require the user to confirm installation.'},
+  {q:'Which feature most directly supports learners who stop and return later?',opts:['Progress tracking and resume','A larger logo','Autoplay video','Decorative animation'],correct:0,why:'Saved progress and resume functionality help learners continue from their last point.'}
+];
+
+const $ = (s,root=document)=>root.querySelector(s);
+const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
+const icon = name => `<svg class="icon"><use href="#i-${name}"></use></svg>`;
+
+function renderContent(){
+  $('#serviceGrid').innerHTML = SERVICES.map(([ic,t,d])=>`<article class="card service-card reveal"><div class="icon-box">${icon(ic)}</div><h3>${t}</h3><p>${d}</p></article>`).join('');
+  Object.entries(FEATURES).forEach(([key,items])=>{
+    const midpoint=Math.ceil(items.length/2);
+    const chunks=[items.slice(0,midpoint),items.slice(midpoint)];
+    $(`#feature-${key}`).innerHTML=chunks.map((chunk,i)=>`<article class="card feature-list-card"><h3>${i===0?'Core capabilities':'Additional capabilities'}</h3><ul>${chunk.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('');
+  });
+  $('#deliverablesGrid').innerHTML=DELIVERABLES.map((d,i)=>`<article class="card" style="padding:20px"><div class="icon-box">${icon(i%3===0?'check':i%3===1?'monitor':'file')}</div><h3 style="font-size:1rem;margin-top:14px">${d}</h3></article>`).join('');
+  $('#audienceCloud').innerHTML=AUDIENCES.map(a=>`<span>${a}</span>`).join('');
+  $('#faqList').innerHTML=FAQS.map(([q,a])=>`<details><summary>${q}</summary><div class="answer">${a}</div></details>`).join('');
+  $('#transparencyGrid').innerHTML=TRANSPARENCY.map(([t,d])=>`<article class="card transparency-card"><div class="icon-box">${icon('check')}</div><h3 style="margin-top:14px">${t}</h3><p class="muted small">${d}</p></article>`).join('');
+  $('#demoQuiz').innerHTML=QUIZ.map((q,qi)=>`<fieldset class="quiz-q"><legend><strong>${qi+1}. ${q.q}</strong></legend>${q.opts.map((o,oi)=>`<label class="option"><input type="radio" name="q${qi}" value="${oi}"><span>${o}</span></label>`).join('')}</fieldset>`).join('');
+}
+
+function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),3200)}
+function openModal(id){const el=$('#'+id);el.classList.add('open');document.body.classList.add('modal-open');const focusable=el.querySelector('button,input,textarea,a');focusable?.focus()}
+function closeModal(id){$('#'+id)?.classList.remove('open');if(!$('.modal.open'))document.body.classList.remove('modal-open')}
+function safeCopy(text){return navigator.clipboard?.writeText(text).then(()=>true).catch(()=>false) || Promise.resolve(false)}
+
+function initTheme(){
+  const saved=localStorage.getItem('dlh-theme');
+  const prefers=window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(saved || (prefers?'dark':'light'));
+  $('#themeBtn').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
+  $('#textSizeBtn').addEventListener('click',()=>{document.body.classList.toggle('large-text');localStorage.setItem('dlh-large-text',document.body.classList.contains('large-text')?'1':'0');toast(document.body.classList.contains('large-text')?'Larger text enabled':'Standard text restored')});
+  if(localStorage.getItem('dlh-large-text')==='1')document.body.classList.add('large-text');
+}
+function setTheme(theme){document.documentElement.dataset.theme=theme;localStorage.setItem('dlh-theme',theme);$('#themeBtn').innerHTML=icon(theme==='dark'?'sun':'moon');}
+
+function initNavigation(){
+  $('#menuToggle').addEventListener('click',()=>{const nav=$('#mainNav');const open=nav.classList.toggle('open');$('#menuToggle').setAttribute('aria-expanded',String(open))});
+  $$('#mainNav a').forEach(a=>a.addEventListener('click',()=>{$('#mainNav').classList.remove('open');$('#menuToggle').setAttribute('aria-expanded','false')}));
+  const updateBackTop=()=>{const y=document.body.classList.contains('preview-simulated')?$('#previewScroll').scrollTop:window.scrollY;$('#backTop').classList.toggle('show',y>600)};
+  window.addEventListener('scroll',updateBackTop);$('#previewScroll').addEventListener('scroll',updateBackTop);
+  $('#backTop').addEventListener('click',()=>{if(document.body.classList.contains('preview-simulated'))$('#previewScroll').scrollTo({top:0,behavior:'smooth'});else window.scrollTo({top:0,behavior:'smooth'})});
+}
+
+function initDemo(){
+  $$('.demo-tab').forEach(btn=>btn.addEventListener('click',()=>{ $$('.demo-tab').forEach(b=>b.classList.remove('active')); $$('.demo-panel').forEach(p=>p.classList.remove('active')); btn.classList.add('active'); $(`#panel-${btn.dataset.panel}`).classList.add('active'); }));
+  const complete=localStorage.getItem('dlh-demo-lesson')==='1';
+  updateLesson(complete);
+  $('#completeLesson').addEventListener('click',()=>{const next=localStorage.getItem('dlh-demo-lesson')!=='1';localStorage.setItem('dlh-demo-lesson',next?'1':'0');updateLesson(next);toast(next?'Lesson marked complete':'Lesson marked incomplete')});
+  $('#submitQuiz').addEventListener('click',()=>{
+    let score=0,answered=0; QUIZ.forEach((q,i)=>{const checked=$(`input[name="q${i}"]:checked`); if(checked){answered++;if(Number(checked.value)===q.correct)score++;}});
+    const result=$('#quizResult');result.style.display='block';
+    if(answered<QUIZ.length){result.textContent=`Please answer all ${QUIZ.length} questions. You have answered ${answered}.`;return}
+    localStorage.setItem('dlh-demo-quiz','1');
+    result.innerHTML=`You scored <strong>${score}/${QUIZ.length}</strong>. ${score===QUIZ.length?'Excellent—every answer is correct.':'Review the explanations below.'}<ol>${QUIZ.map((q,i)=>`<li>${q.why}</li>`).join('')}</ol>`;
+    updateProgress();
+  });
+  $('#demoSearch').addEventListener('input',e=>renderSearch(e.target.value));
+  $('#readLesson').addEventListener('click',()=>{
+    if(!('speechSynthesis'in window)){toast('Read-aloud is not supported in this browser.');return}
+    speechSynthesis.cancel(); const text=$('#sampleLessonText').innerText.replace(/[✓•]/g,''); const u=new SpeechSynthesisUtterance(text);u.rate=.95;speechSynthesis.speak(u);toast('Read-aloud started')
+  });
+  $('#stopReading').addEventListener('click',()=>{speechSynthesis?.cancel();toast('Read-aloud stopped')});
+  $('#previewCertificate').addEventListener('click',()=>openModal('certificateModal'));
+  $('#openInstallModal').addEventListener('click',()=>openModal('installModal'));
+  $('#chatSend').addEventListener('click',sendChat);$('#chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat()});
+}
+function updateLesson(done){$('#lessonStatus').innerHTML=done?'✓ Lesson completed':'Lesson not yet completed';$('#completeLesson').textContent=done?'Mark Incomplete':'Mark Lesson Complete';updateProgress()}
+function updateProgress(){const n=(localStorage.getItem('dlh-demo-lesson')==='1'?1:0)+(localStorage.getItem('dlh-demo-quiz')==='1'?1:0);const p=n*50;$('#demoProgressFill').style.width=p+'%';$('#demoProgressText').textContent=p+'% complete'}
+function renderSearch(term){const box=$('#demoSearchResults');term=term.trim().toLowerCase();if(!term){box.innerHTML='<p class="muted">Matching sections will appear here.</p>';return}const hits=DEMO_SEARCH.filter(x=>(x.title+' '+x.section+' '+x.text).toLowerCase().includes(term));if(!hits.length){box.innerHTML='<div class="search-hit"><strong>No results found.</strong><p class="small muted">Try a broader term such as progress, certificate or offline.</p></div>';return}const re=new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'ig');box.innerHTML=hits.map(x=>`<div class="search-hit"><strong>${x.title}</strong><div class="small muted">${x.section}</div><p>${x.text.replace(re,'<mark>$1</mark>')}</p></div>`).join('')}
+function sendChat(){const input=$('#chatInput');const q=input.value.trim();if(!q)return;const box=$('#chatBox');box.insertAdjacentHTML('beforeend',`<div class="bubble user"></div>`);box.lastElementChild.textContent=q;input.value='';const t=q.toLowerCase();let answer='I could not find that in this small demonstration knowledge base. Try asking about assessments, accessibility, certificates, offline access or progress tracking.';if(t.includes('assess')||t.includes('quiz')||t.includes('exam'))answer='Assessments can include question banks, randomisation, automatic scoring, rationales and weak-topic review. See: Available Features → Assessment.';else if(t.includes('accessib')||t.includes('read'))answer='Accessibility options may include keyboard navigation, visible focus, strong contrast, adjustable text and read-aloud. See: Sample Lesson → Accessible.';else if(t.includes('certificate'))answer='Certificates can unlock after required lessons and assessments, and may include scores, dates, learning hours and verification details. See: Available Features → Assessment.';else if(t.includes('offline')||t.includes('internet'))answer='Core content can be cached for offline use after the first complete load. External videos and live services may still need internet. See: Install Preview.';else if(t.includes('progress')||t.includes('resume'))answer='Progress can be saved locally so learners return to their last lesson and view completed activities. See: Available Features → User Experience.';setTimeout(()=>{box.insertAdjacentHTML('beforeend',`<div class="bubble bot"></div>`);box.lastElementChild.textContent=answer;box.scrollTop=box.scrollHeight},300);box.scrollTop=box.scrollHeight}
+
+function initFeatureTabs(){ $$('.feature-tab').forEach(btn=>btn.addEventListener('click',()=>{$$('.feature-tab').forEach(b=>b.classList.remove('active'));$$('.feature-panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');$(`#feature-${btn.dataset.feature}`).classList.add('active')})); }
+function initQuoteButtons(){ $$('.quote-btn').forEach(b=>b.addEventListener('click',()=>{$('#platformType').value=b.dataset.package;$('#request').scrollIntoView({behavior:'smooth'});setTimeout(()=>$('#name').focus(),500)})); }
+
+function buildBrief(){
+  const form=$('#enquiryForm');if(!form.reportValidity())return null;const fd=new FormData(form);const features=fd.getAll('features').join(', ')||'Not specified';
+  return `PROJECT ENQUIRY — ${CONFIG.businessName}\n\nName: ${fd.get('name')}\nOrganisation: ${fd.get('organisation')||'Not specified'}\nEmail: ${fd.get('email')||'Not specified'}\nTelephone/WhatsApp: ${fd.get('phone')||'Not specified'}\nPlatform type: ${fd.get('platformType')}\nTarget audience: ${fd.get('audience')||'Not specified'}\nEstimated modules: ${fd.get('modules')}\nContent format: ${fd.get('contentFormat')}\nDesired features: ${features}\nExpected launch date: ${fd.get('launchDate')||'Not specified'}\nBudget range: ${fd.get('budget')}\n\nProject description:\n${fd.get('description')}\n\nGenerated from ${CONFIG.businessName}.`;
+}
+function showFallbackMessage(text){$('#messagePreview').value=text;openModal('messageModal')}
+function initForm(){
+  $('#emailRequest').addEventListener('click',()=>{const text=buildBrief();if(!text)return;if(CONFIG.emailAddress){location.href=`mailto:${encodeURIComponent(CONFIG.emailAddress)}?subject=${encodeURIComponent('Project Enquiry — '+CONFIG.businessName)}&body=${encodeURIComponent(text)}`;showFormStatus('Your email application was opened. Review the message before sending.')}else{safeCopy(text);showFallbackMessage(text)}});
+  $('#whatsappRequest').addEventListener('click',()=>{const text=buildBrief();if(!text)return;if(CONFIG.whatsappNumber){window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`,'_blank','noopener');showFormStatus('WhatsApp was opened with your project brief. Review it before sending.')}else{safeCopy(text);showFallbackMessage(text)}});
+  $('#copyRequest').addEventListener('click',async()=>{const text=buildBrief();if(!text)return;const ok=await safeCopy(text);if(ok){showFormStatus('Project brief copied to your clipboard.')}else{showFallbackMessage(text)}});
+  $('#copyMessageModal').addEventListener('click',async()=>{const ok=await safeCopy($('#messagePreview').value);toast(ok?'Message copied':'Select the text and copy it manually')});
+}
+function showFormStatus(msg){const s=$('#formStatus');s.textContent=msg;s.style.display='block'}
+function directContact(type){
+  if(type==='whatsapp'&&CONFIG.whatsappNumber){window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent('Hello, I would like to discuss a custom digital learning platform.')}`,'_blank','noopener');return}
+  if(type==='email'&&CONFIG.emailAddress){location.href=`mailto:${encodeURIComponent(CONFIG.emailAddress)}?subject=${encodeURIComponent('Digital Learning Platform Enquiry')}`;return}
+  $('#request').scrollIntoView({behavior:'smooth'});toast(`Direct ${type==='whatsapp'?'WhatsApp':'email'} contact is not configured yet. Use the project form to prepare your message.`)
+}
+
+function initShare(){
+  const url=CONFIG.siteUrl||location.href.split('?')[0];const title='Custom Digital Learning Hubs';const text='Turn your information into a professional digital learning platform.';
+  $$('[data-share]').forEach(btn=>btn.addEventListener('click',async()=>{const type=btn.dataset.share;if(type==='native'&&navigator.share){await navigator.share({title,text,url}).catch(()=>{});return}const links={whatsapp:`https://wa.me/?text=${encodeURIComponent(text+' '+url)}`,facebook:`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,email:`mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(text+'\n\n'+url)}`};if(links[type])window.open(links[type],'_blank','noopener')}));
+  $('#copyLinkFooter').addEventListener('click',async()=>toast(await safeCopy(url)?'Website link copied':'Could not copy automatically'));
+}
+
+const PREVIEW_MODES=['auto','mobile','tablet','laptop','desktop'];
+const PREVIEW_LABELS={auto:'Automatic',mobile:'Mobile • 390 px',tablet:'Tablet • 768 px',laptop:'Laptop • 1280 px',desktop:'Desktop • 1440 px'};
+let pendingPreviewMode='auto';
+let lastWelcomeFocus=null;
+let welcomeTrapHandler=null;
+
+function storageGet(key){try{return localStorage.getItem(key)}catch{return null}}
+function storageSet(key,value){try{localStorage.setItem(key,value)}catch{}}
+function detectPreviewMode(){const w=window.innerWidth;return w<600?'mobile':w<950?'tablet':w<1360?'laptop':'desktop'}
+function normalisePreviewMode(mode){return PREVIEW_MODES.includes(mode)?mode:'auto'}
+function announcePreview(message){const live=$('#previewAnnouncement');if(live){live.textContent='';setTimeout(()=>live.textContent=message,30)}}
+function updateChoiceState(mode){
+  pendingPreviewMode=normalisePreviewMode(mode==='auto'?detectPreviewMode():mode);
+  $$('[data-preview-choice]').forEach(btn=>btn.setAttribute('aria-checked',String(btn.dataset.previewChoice===pendingPreviewMode)));
+}
+function applyPreviewMode(mode,{save=true,announce=true}={}){
+  mode=normalisePreviewMode(mode);
+  document.body.classList.remove('preview-simulated','preview-mobile','preview-tablet','preview-laptop','preview-desktop');
+  $('#previewStage').dataset.preview=mode;
+  if(mode!=='auto')document.body.classList.add('preview-simulated',`preview-${mode}`);
+  $('#previewLabel').textContent=mode==='auto'?'Automatic responsive preview':`${PREVIEW_LABELS[mode]} preview`;
+  $('#previewCurrent').textContent=`Current: ${PREVIEW_LABELS[mode]}`;
+  if(save)storageSet(CONFIG.previewStorageKey,mode);
+  if(announce)announcePreview(`${PREVIEW_LABELS[mode]} preview applied.`);
+  // Close navigation when changing simulated widths so it never becomes stranded open.
+  $('#mainNav')?.classList.remove('open');$('#menuToggle')?.setAttribute('aria-expanded','false');
+}
+function setupClientLogo(){
+  const img=$('#welcomeClientLogo'),fallback=$('#welcomeLogoFallback');if(!img||!fallback)return;
+  const showFallback=()=>{img.hidden=true;fallback.hidden=false};
+  img.alt=CONFIG.clientLogoAlt;img.addEventListener('load',()=>{img.hidden=false;fallback.hidden=true},{once:true});img.addEventListener('error',showFallback,{once:true});
+  if(CONFIG.clientLogoPath){img.src=CONFIG.clientLogoPath}else showFallback();
+}
+function trapWelcomeFocus(e){
+  if(e.key!=='Tab')return;const screen=$('#welcomeScreen');const focusables=$$('button:not([disabled]),a[href],input,select,textarea,[tabindex]:not([tabindex="-1"])',screen).filter(el=>!el.hidden&&el.offsetParent!==null);if(!focusables.length)return;
+  const first=focusables[0],last=focusables.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+}
+function openWelcome({forced=false}={}){
+  if(!CONFIG.welcomeEnabled)return;lastWelcomeFocus=document.activeElement;const screen=$('#welcomeScreen');screen.hidden=false;screen.classList.remove('is-closing');screen.classList.add('show');document.body.classList.add('welcome-open');
+  const stored=normalisePreviewMode(storageGet(CONFIG.previewStorageKey)||CONFIG.defaultPreviewMode);updateChoiceState(stored==='auto'?detectPreviewMode():stored);
+  welcomeTrapHandler=trapWelcomeFocus;document.addEventListener('keydown',welcomeTrapHandler);setTimeout(()=>$('#enterShowcase').focus(),80);
+  if(forced)announcePreview('Preview size selector opened.');
+}
+function closeWelcome({markComplete=true,restoreFocus=true}={}){
+  const screen=$('#welcomeScreen');if(!screen.classList.contains('show'))return;if(markComplete)storageSet(CONFIG.welcomeStorageKey,'true');screen.classList.add('is-closing');document.body.classList.remove('welcome-open');
+  if(welcomeTrapHandler){document.removeEventListener('keydown',welcomeTrapHandler);welcomeTrapHandler=null}
+  setTimeout(()=>{screen.classList.remove('show','is-closing');screen.hidden=true;if(restoreFocus&&lastWelcomeFocus?.focus)lastWelcomeFocus.focus()},330);
+}
+function selectAndEnter(mode){updateChoiceState(mode);storageSet(CONFIG.previewStorageKey,mode);setTimeout(()=>{applyPreviewMode(mode);closeWelcome();},170)}
+function initWelcomePreview(){
+  setupClientLogo();
+  const params=new URLSearchParams(location.search),installPriority=params.get('install')==='1',forceWelcome=params.get('welcome')==='1';
+  const stored=normalisePreviewMode(storageGet(CONFIG.previewStorageKey)||CONFIG.defaultPreviewMode);applyPreviewMode(stored,{save:false,announce:false});
+  $('#previewControl').classList.add('show');
+  $$('[data-preview-choice]').forEach(btn=>{
+    btn.addEventListener('click',()=>selectAndEnter(btn.dataset.previewChoice));
+    btn.addEventListener('keydown',e=>{if(!['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(e.key))return;e.preventDefault();const cards=$$('[data-preview-choice]');const i=cards.indexOf(btn),dir=['ArrowRight','ArrowDown'].includes(e.key)?1:-1;const next=cards[(i+dir+cards.length)%cards.length];updateChoiceState(next.dataset.previewChoice);next.focus()});
+  });
+  $('#enterShowcase').addEventListener('click',()=>selectAndEnter(pendingPreviewMode||detectPreviewMode()));
+  $('#useAutoPreview').addEventListener('click',()=>{applyPreviewMode('auto');closeWelcome()});
+  $('#skipWelcome').addEventListener('click',()=>{if(!storageGet(CONFIG.previewStorageKey))applyPreviewMode('auto');closeWelcome()});
+  $('#previewControlToggle').addEventListener('click',()=>{const menu=$('#previewControlMenu'),open=menu.hidden;menu.hidden=!open;$('#previewControlToggle').setAttribute('aria-expanded',String(open));if(open)$('#quickAutoPreview').focus()});
+  $('#quickAutoPreview').addEventListener('click',()=>{applyPreviewMode('auto');$('#previewControlMenu').hidden=true;$('#previewControlToggle').setAttribute('aria-expanded','false');$('#previewControlToggle').focus()});
+  $('#reopenWelcome').addEventListener('click',()=>{$('#previewControlMenu').hidden=true;$('#previewControlToggle').setAttribute('aria-expanded','false');openWelcome({forced:true})});
+  document.addEventListener('click',e=>{const control=$('#previewControl');if(control&&!control.contains(e.target)){const menu=$('#previewControlMenu');menu.hidden=true;$('#previewControlToggle').setAttribute('aria-expanded','false')}});
+  document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if($('#welcomeScreen').classList.contains('show')){e.preventDefault();closeWelcome()}else if(!$('#previewControlMenu').hidden){$('#previewControlMenu').hidden=true;$('#previewControlToggle').setAttribute('aria-expanded','false');$('#previewControlToggle').focus()}});
+  const completed=storageGet(CONFIG.welcomeStorageKey)==='true';
+  if(CONFIG.welcomeEnabled&&!installPriority&&(forceWelcome||CONFIG.showWelcomeEveryVisit||!completed))openWelcome({forced:forceWelcome});
+}
+
+let deferredPrompt=null;
+function initPWA(){
+  window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});
+  const doInstall=async()=>{if(deferredPrompt){deferredPrompt.prompt();const choice=await deferredPrompt.userChoice;toast(choice.outcome==='accepted'?'Installation accepted':'Installation was not completed');deferredPrompt=null}else if(/iphone|ipad|ipod/i.test(navigator.userAgent)){toast('In Safari, tap Share and choose “Add to Home Screen”.')}else{toast('Use your browser menu and choose Install App or Add to Home Screen when available.')}};
+  $('#realInstallBtn').addEventListener('click',doInstall);$('#installScreenBtn').addEventListener('click',doInstall);
+  if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').then(reg=>{reg.addEventListener('updatefound',()=>{const nw=reg.installing;nw?.addEventListener('statechange',()=>{if(nw.state==='installed'&&navigator.serviceWorker.controller)toast('A new version is available. Refresh to update.')})})}).catch(err=>console.warn('Service worker registration failed',err)))}
+  const setOnline=()=>$('#offlineBar').classList.toggle('show',!navigator.onLine);window.addEventListener('online',setOnline);window.addEventListener('offline',setOnline);setOnline();
+  if(new URLSearchParams(location.search).get('install')==='1')$('#installScreen').classList.add('show');
+  $('#continueWebsite').addEventListener('click',()=>{$('#installScreen').classList.remove('show');history.replaceState({},'',location.pathname+location.hash)});
+  if(/iphone|ipad|ipod/i.test(navigator.userAgent))$('#iosInstallHint').style.display='block';
+}
+function initModals(){
+  $$('[data-close]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();closeModal(b.dataset.close)}));
+  $$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id)}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')$$('.modal.open').forEach(m=>closeModal(m.id))});
+}
+function initReveal(){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.08});$$('.reveal').forEach(el=>io.observe(el))}
+
+function init(){
+  renderContent();
+  $('#year').textContent=new Date().getFullYear();$('#versionText').textContent=CONFIG.version;$('#certificateDate').textContent=new Intl.DateTimeFormat('en-JM',{dateStyle:'long'}).format(new Date());
+  initTheme();initNavigation();initDemo();initFeatureTabs();initQuoteButtons();initForm();initShare();initPWA();initWelcomePreview();initModals();initReveal();
+  $$('.contact-whatsapp').forEach(b=>b.addEventListener('click',()=>directContact('whatsapp')));$$('.contact-email').forEach(b=>b.addEventListener('click',()=>directContact('email')));
+  renderSearch('');
+}
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>
